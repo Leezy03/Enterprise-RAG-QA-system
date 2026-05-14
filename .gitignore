@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+
+# Node
+node_modules/
+dist/
+.vite/
+
+# Local configuration
+.env
+.env.*
+!.env.example
+
+# Runtime data
+项目源码/EnterpriseQA/server/uploads/
+项目源码/EnterpriseQA/server/chroma_data/
+项目源码/EnterpriseQA/server/logs/
+
+# IDE / OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db

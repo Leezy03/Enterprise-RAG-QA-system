@@ -1,0 +1,1581 @@
+{
+  "baseline_summary": {
+    "count": 28,
+    "hit_at_k": 1.0,
+    "hit_at_1": 1.0,
+    "mrr": 1.0,
+    "keyword_coverage": 1.0,
+    "top1_keyword_coverage": 0.8482142857142857,
+    "answer_hit_at_1": 0.7857142857142857,
+    "avg_first_hit_rank": 1.0
+  },
+  "rerank_summary": {
+    "count": 28,
+    "hit_at_k": 1.0,
+    "hit_at_1": 1.0,
+    "mrr": 1.0,
+    "keyword_coverage": 1.0,
+    "top1_keyword_coverage": 0.9047607142857144,
+    "answer_hit_at_1": 0.8928571428571429,
+    "avg_first_hit_rank": 1.0
+  },
+  "delta": {
+    "hit_at_k": 0.0,
+    "hit_at_1": 0.0,
+    "mrr": 0.0,
+    "keyword_coverage": 0.0,
+    "top1_keyword_coverage": 0.0565,
+    "answer_hit_at_1": 0.1071
+  },
+  "case_changes": {
+    "improved": 0,
+    "worsened": 0,
+    "unchanged": 28,
+    "answer_improved": 5,
+    "answer_worsened": 2,
+    "answer_unchanged": 21
+  },
+  "resume_summary": "在28条自建RAG检索评测样本上，Rerank在保持TopK来源命中率100.0%的同时，将Top1答案关键词覆盖率由84.8%提升至90.5%。",
+  "details": [
+    {
+      "id": "policy_annual_leave_10_years",
+      "question": "我累计工作11年，可以休几天年假？",
+      "baseline_rank": 1,
+      "rerank_rank": 1,
+      "baseline_mrr": 1.0,
+      "rerank_mrr": 1.0,
+      "keyword_coverage": 1.0,
+      "baseline_top1_keyword_coverage": 1.0,
+      "rerank_top1_keyword_coverage": 1.0,
+      "baseline_answer_hit_at_1": true,
+      "rerank_answer_hit_at_1": true,
+      "rerank_top_sources": [
+        {
+          "rank": 1,
+          "file_names": [
+            "061fc6f69b4c49949917d3b18466911a.md",
+            "员工请假管理办法.md"
+          ],
+          "vector_score": 0.4666,
+          "rerank_score": 0.4729,
+          "chunk_index": 0
+        },
+        {
+          "rank": 2,
+          "file_names": [
+            "061fc6f69b4c49949917d3b18466911a.md",
+            "员工请假管理办法.md"
+          ],
+          "vector_score": 0.45,
+          "rerank_score": 0.3838,
+          "chunk_index": 1
+        },
+        {
+          "rank": 3,
+          "file_names": [
+            "59963262a75a4995880c3cc6ac6828c0.txt",
+            "公司考勤管理制度.txt"
+          ],
+          "vector_score": 0.3924,
+          "rerank_score": 0.3725,
+          "chunk_index": 1
+        },
+        {
+          "rank": 4,
+          "file_names": [
+            "061fc6f69b4c49949917d3b18466911a.md",
+            "员工请假管理办法.md"
+          ],
+          "vector_score": 0.4444,
+          "rerank_score": 0.3671,
+          "chunk_index": 2
+        }
+      ]
+    },
+    {
+      "id": "policy_leave_approval",
+      "question": "请假需要提前申请并获得批准吗？",
+      "baseline_rank": 1,
+      "rerank_rank": 1,
+      "baseline_mrr": 1.0,
+      "rerank_mrr": 1.0,
+      "keyword_coverage": 1.0,
+      "baseline_top1_keyword_coverage": 0.6667,
+      "rerank_top1_keyword_coverage": 1.0,
+      "baseline_answer_hit_at_1": false,
+      "rerank_answer_hit_at_1": true,
+      "rerank_top_sources": [
+        {
+          "rank": 1,
+          "file_names": [
+            "3feba57396754d42b44253b29bfdff6c.docx",
+            "员工行为规范手册.docx"
+          ],
+          "vector_score": 0.4315,
+          "rerank_score": 0.5305,
+          "chunk_index": 1
+        },
+        {
+          "rank": 2,
+          "file_names": [
+            "3feba57396754d42b44253b29bfdff6c.docx",
+            "员工行为规范手册.docx"
+          ],
+          "vector_score": 0.3685,
+          "rerank_score": 0.4895,
+          "chunk_index": 0
+        },
+        {
+          "rank": 3,
+          "file_names": [
+            "061fc6f69b4c49949917d3b18466911a.md",
+            "员工请假管理办法.md"
+          ],
+          "vector_score": 0.4624,
+          "rerank_score": 0.4631,
+          "chunk_index": 2
+        },
+        {
+          "rank": 4,
+          "file_names": [
+            "59963262a75a4995880c3cc6ac6828c0.txt",
+            "公司考勤管理制度.txt"
+          ],
+          "vector_score": 0.4144,
+          "rerank_score": 0.4444,
+          "chunk_index": 1
+        }
+      ]
+    },
+    {
+      "id": "policy_work_time",
+      "question": "公司的上班时间和午休时间是什么？",
+      "baseline_rank": 1,
+      "rerank_rank": 1,
+      "baseline_mrr": 1.0,
+      "rerank_mrr": 1.0,
+      "keyword_coverage": 1.0,
+      "baseline_top1_keyword_coverage": 1.0,
+      "rerank_top1_keyword_coverage": 1.0,
+      "baseline_answer_hit_at_1": true,
+      "rerank_answer_hit_at_1": true,
+      "rerank_top_sources": [
+        {
+          "rank": 1,
+          "file_names": [
+            "59963262a75a4995880c3cc6ac6828c0.txt",
+            "公司考勤管理制度.txt"
+          ],
+          "vector_score": 0.4692,
+          "rerank_score": 0.53,
+          "chunk_index": 0
+        },
+        {
+          "rank": 2,
+          "file_names": [
+            "59963262a75a4995880c3cc6ac6828c0.txt",
+            "公司考勤管理制度.txt"
+          ],
+          "vector_score": 0.4361,
+          "rerank_score": 0.4185,
+          "chunk_index": 1
+        },
+        {
+          "rank": 3,
+          "file_names": [
+            "89b0b3f6755e489980520281153f9bb5.pdf",
+            "公司薪酬福利制度.pdf"
+          ],
+          "vector_score": 0.4103,
+          "rerank_score": 0.3717,
+          "chunk_index": 0
+        },
+        {
+          "rank": 4,
+          "file_names": [
+            "3feba57396754d42b44253b29bfdff6c.docx",
+            "员工行为规范手册.docx"
+          ],
+          "vector_score": 0.4313,
+          "rerank_score": 0.3703,
+          "chunk_index": 1
+        }
+      ]
+    },
+    {
+      "id": "policy_salary_promotion",
+      "question": "员工晋升后薪酬会如何调整？",
+      "baseline_rank": 1,
+      "rerank_rank": 1,
+      "baseline_mrr": 1.0,
+      "rerank_mrr": 1.0,
+      "keyword_coverage": 1.0,
+      "baseline_top1_keyword_coverage": 1.0,
+      "rerank_top1_keyword_coverage": 1.0,
+      "baseline_answer_hit_at_1": true,
+      "rerank_answer_hit_at_1": true,
+      "rerank_top_sources": [
+        {
+          "rank": 1,
+          "file_names": [
+            "89b0b3f6755e489980520281153f9bb5.pdf",
+            "公司薪酬福利制度.pdf"
+          ],
+          "vector_score": 0.567,
+          "rerank_score": 0.5381,
+          "chunk_index": 2
+        },
+        {
+          "rank": 2,
+          "file_names": [
+            "89b0b3f6755e489980520281153f9bb5.pdf",
+            "公司薪酬福利制度.pdf"
+          ],
+          "vector_score": 0.4328,
+          "rerank_score": 0.4248,
+          "chunk_index": 1
+        },
+        {
+          "rank": 3,
+          "file_names": [
+            "3feba57396754d42b44253b29bfdff6c.docx",
+            "员工行为规范手册.docx"
+          ],
+          "vector_score": 0.4754,
+          "rerank_score": 0.4003,
+          "chunk_index": 2
+        },
+        {
+          "rank": 4,
+          "file_names": [
+            "89b0b3f6755e489980520281153f9bb5.pdf",
+            "公司薪酬福利制度.pdf"
+          ],
+          "vector_score": 0.4389,
+          "rerank_score": 0.3896,
+          "chunk_index": 0
+        }
+      ]
+    },
+    {
+      "id": "tech_db_engine",
+      "question": "公司数据库表应该使用什么存储引擎和字符集？",
+      "baseline_rank": 1,
+      "rerank_rank": 1,
+      "baseline_mrr": 1.0,
+      "rerank_mrr": 1.0,
+      "keyword_coverage": 1.0,
+      "baseline_top1_keyword_coverage": 1.0,
+      "rerank_top1_keyword_coverage": 1.0,
+      "baseline_answer_hit_at_1": true,
+      "rerank_answer_hit_at_1": true,
+      "rerank_top_sources": [
+        {
+          "rank": 1,
+          "file_names": [
+            "2ee9cc33b736429f97be205d94588829.pdf",
+            "数据库设计规范.pdf"
+          ],
+          "vector_score": 0.5127,
+          "rerank_score": 0.4875,
+          "chunk_index": 1
+        },
+        {
+          "rank": 2,
+          "file_names": [
+            "2ee9cc33b736429f97be205d94588829.pdf",
+            "数据库设计规范.pdf"
+          ],
+          "vector_score": 0.4662,
+          "rerank_score": 0.423,
+          "chunk_index": 2
+        },
+        {
+          "rank": 3,
+          "file_names": [
+            "2ee9cc33b736429f97be205d94588829.pdf",
+            "数据库设计规范.pdf"
+          ],
+          "vector_score": 0.4559,
+          "rerank_score": 0.4163,
+          "chunk_index": 0
+        },
+        {
+          "rank": 4,
+          "file_names": [
+            "Python开发编码规范.txt",
+            "ec7591726edd4313b0390d25c183d7c2.txt"
+          ],
+          "vector_score": 0.4653,
+          "rerank_score": 0.3796,
+          "chunk_index": 3
+        }
+      ]
+    },
+    {
+      "id": "tech_db_integer",
+      "question": "开发数据库字段时，整数类型应该优先用什么？",
+      "baseline_rank": 1,
+      "rerank_rank": 1,
+      "baseline_mrr": 1.0,
+      "rerank_mrr": 1.0,
+      "keyword_coverage": 1.0,
+      "baseline_top1_keyword_coverage": 1.0,
+      "rerank_top1_keyword_coverage": 1.0,
+      "baseline_answer_hit_at_1": true,
+      "rerank_answer_hit_at_1": true,
+      "rerank_top_sources": [
+        {
+          "rank": 1,
+          "file_names": [
+            "2ee9cc33b736429f97be205d94588829.pdf",
+            "数据库设计规范.pdf"
+          ],
+          "vector_score": 0.49,
+          "rerank_score": 0.4509,
+          "chunk_index": 1
+        },
+        {
+          "rank": 2,
+          "file_names": [
+            "2ee9cc33b736429f97be205d94588829.pdf",
+            "数据库设计规范.pdf"
+          ],
+          "vector_score": 0.4607,
+          "rerank_score": 0.4318,
+          "chunk_index": 2
+        },
+        {
+          "rank": 3,
+          "file_names": [
+            "2ee9cc33b736429f97be205d94588829.pdf",
+            "数据库设计规范.pdf"
+          ],
+          "vector_score": 0.4181,
+          "rerank_score": 0.4218,
+          "chunk_index": 0
+        },
+        {
+          "rank": 4,
+          "file_names": [
+            "74b977bd9f8545dca742bf7efc73969c.docx",
+            "Git版本管理规范.docx"
+          ],
+          "vector_score": 0.3951,
+          "rerank_score": 0.3362,
+          "chunk_index": 1
+        }
+      ]
+    },
+    {
+      "id": "tech_api_doc",
+      "question": "API接口文档需要包含哪些内容？",
+      "baseline_rank": 1,
+      "rerank_rank": 1,
+      "baseline_mrr": 1.0,
+      "rerank_mrr": 1.0,
+      "keyword_coverage": 1.0,
+      "baseline_top1_keyword_coverage": 1.0,
+      "rerank_top1_keyword_coverage": 1.0,
+      "baseline_answer_hit_at_1": true,
+      "rerank_answer_hit_at_1": true,
+      "rerank_top_sources": [
+        {
+          "rank": 1,
+          "file_names": [
+            "API接口设计规范.md",
+            "e2ece8ca7ec243d1aa66827b902896c0.md"
+          ],
+          "vector_score": 0.5637,
+          "rerank_score": 0.53,
+          "chunk_index": 5
+        },
+        {
+          "rank": 2,
+          "file_names": [
+            "API接口设计规范.md",
+            "e2ece8ca7ec243d1aa66827b902896c0.md"
+          ],
+          "vector_score": 0.5356,
+          "rerank_score": 0.4981,
+          "chunk_index": 4
+        },
+        {
+          "rank": 3,
+          "file_names": [
+            "API接口设计规范.md",
+            "e2ece8ca7ec243d1aa66827b902896c0.md"
+          ],
+          "vector_score": 0.5124,
+          "rerank_score": 0.4285,
+          "chunk_index": 2
+        },
+        {
+          "rank": 4,
+          "file_names": [
+            "Python开发编码规范.txt",
+            "ec7591726edd4313b0390d25c183d7c2.txt"
+          ],
+          "vector_score": 0.4112,
+          "rerank_score": 0.39,
+          "chunk_index": 2
+        }
+      ]
+    },
+    {
+      "id": "tech_git_release",
+      "question": "版本发布时 release 分支应该从哪个分支创建？",
+      "baseline_rank": 1,
+      "rerank_rank": 1,
+      "baseline_mrr": 1.0,
+      "rerank_mrr": 1.0,
+      "keyword_coverage": 1.0,
+      "baseline_top1_keyword_coverage": 1.0,
+      "rerank_top1_keyword_coverage": 1.0,
+      "baseline_answer_hit_at_1": true,
+      "rerank_answer_hit_at_1": true,
+      "rerank_top_sources": [
+        {
+          "rank": 1,
+          "file_names": [
+            "74b977bd9f8545dca742bf7efc73969c.docx",
+            "Git版本管理规范.docx"
+          ],
+          "vector_score": 0.517,
+          "rerank_score": 0.5521,
+          "chunk_index": 2
+        },
+        {
+          "rank": 2,
+          "file_names": [
+            "74b977bd9f8545dca742bf7efc73969c.docx",
+            "Git版本管理规范.docx"
+          ],
+          "vector_score": 0.4621,
+          "rerank_score": 0.5044,
+          "chunk_index": 0
+        },
+        {
+          "rank": 3,
+          "file_names": [
+            "74b977bd9f8545dca742bf7efc73969c.docx",
+            "Git版本管理规范.docx"
+          ],
+          "vector_score": 0.4488,
+          "rerank_score": 0.3517,
+          "chunk_index": 1
+        },
+        {
+          "rank": 4,
+          "file_names": [
+            "API接口设计规范.md",
+            "e2ece8ca7ec243d1aa66827b902896c0.md"
+          ],
+          "vector_score": 0.3875,
+          "rerank_score": 0.3239,
+          "chunk_index": 5
+        }
+      ]
+    },
+    {
+      "id": "tech_python_password",
+      "question": "Python项目中密码和密钥可以硬编码在代码里吗？",
+      "baseline_rank": 1,
+      "rerank_rank": 1,
+      "baseline_mrr": 1.0,
+      "rerank_mrr": 1.0,
+      "keyword_coverage": 1.0,
+      "baseline_top1_keyword_coverage": 1.0,
+      "rerank_top1_keyword_coverage": 1.0,
+      "baseline_answer_hit_at_1": true,
+      "rerank_answer_hit_at_1": true,
+      "rerank_top_sources": [
+        {
+          "rank": 1,
+          "file_names": [
+            "Python开发编码规范.txt",
+            "ec7591726edd4313b0390d25c183d7c2.txt"
+          ],
+          "vector_score": 0.5938,
+          "rerank_score": 0.5816,
+          "chunk_index": 3
+        },
+        {
+          "rank": 2,
+          "file_names": [
+            "74b977bd9f8545dca742bf7efc73969c.docx",
+            "Git版本管理规范.docx"
+          ],
+          "vector_score": 0.4092,
+          "rerank_score": 0.3964,
+          "chunk_index": 2
+        },
+        {
+          "rank": 3,
+          "file_names": [
+            "Python开发编码规范.txt",
+            "ec7591726edd4313b0390d25c183d7c2.txt"
+          ],
+          "vector_score": 0.4237,
+          "rerank_score": 0.3798,
+          "chunk_index": 0
+        },
+        {
+          "rank": 4,
+          "file_names": [
+            "Python开发编码规范.txt",
+            "ec7591726edd4313b0390d25c183d7c2.txt"
+          ],
+          "vector_score": 0.4349,
+          "rerank_score": 0.3609,
+          "chunk_index": 2
+        }
+      ]
+    },
+    {
+      "id": "product_oa_password",
+      "question": "企业OA系统的登录密码可以设置成6位吗？",
+      "baseline_rank": 1,
+      "rerank_rank": 1,
+      "baseline_mrr": 1.0,
+      "rerank_mrr": 1.0,
+      "keyword_coverage": 1.0,
+      "baseline_top1_keyword_coverage": 1.0,
+      "rerank_top1_keyword_coverage": 1.0,
+      "baseline_answer_hit_at_1": true,
+      "rerank_answer_hit_at_1": true,
+      "rerank_top_sources": [
+        {
+          "rank": 1,
+          "file_names": [
+            "3b5c9e5aa69c461480de66cf0e3da30e.txt",
+            "企业OA系统使用手册.txt"
+          ],
+          "vector_score": 0.5113,
+          "rerank_score": 0.5082,
+          "chunk_index": 0
+        },
+        {
+          "rank": 2,
+          "file_names": [
+            "a352932212554d54baf73d3bd39396e9.docx",
+            "新员工入职指南.docx"
+          ],
+          "vector_score": 0.4824,
+          "rerank_score": 0.4894,
+          "chunk_index": 1
+        },
+        {
+          "rank": 3,
+          "file_names": [
+            "4d87ae0742c2414cb3b12b492f4b3e10.pdf",
+            "企业邮箱配置说明.pdf"
+          ],
+          "vector_score": 0.4383,
+          "rerank_score": 0.4608,
+          "chunk_index": 0
+        },
+        {
+          "rank": 4,
+          "file_names": [
+            "4d87ae0742c2414cb3b12b492f4b3e10.pdf",
+            "企业邮箱配置说明.pdf"
+          ],
+          "vector_score": 0.4668,
+          "rerank_score": 0.4379,
+          "chunk_index": 2
+        }
+      ]
+    },
+    {
+      "id": "product_oa_meeting_room",
+      "question": "会议室使用前需要通过什么系统预约？",
+      "baseline_rank": 1,
+      "rerank_rank": 1,
+      "baseline_mrr": 1.0,
+      "rerank_mrr": 1.0,
+      "keyword_coverage": 1.0,
+      "baseline_top1_keyword_coverage": 1.0,
+      "rerank_top1_keyword_coverage": 1.0,
+      "baseline_answer_hit_at_1": true,
+      "rerank_answer_hit_at_1": true,
+      "rerank_top_sources": [
+        {
+          "rank": 1,
+          "file_names": [
+            "a352932212554d54baf73d3bd39396e9.docx",
+            "新员工入职指南.docx"
+          ],
+          "vector_score": 0.4936,
+          "rerank_score": 0.5381,
+          "chunk_index": 1
+        },
+        {
+          "rank": 2,
+          "file_names": [
+            "3b5c9e5aa69c461480de66cf0e3da30e.txt",
+            "企业OA系统使用手册.txt"
+          ],
+          "vector_score": 0.4693,
+          "rerank_score": 0.4809,
+          "chunk_index": 2
+        },
+        {
+          "rank": 3,
+          "file_names": [
+            "3b5c9e5aa69c461480de66cf0e3da30e.txt",
+            "企业OA系统使用手册.txt"
+          ],
+          "vector_score": 0.4131,
+          "rerank_score": 0.372,
+          "chunk_index": 0
+        },
+        {
+          "rank": 4,
+          "file_names": [
+            "a352932212554d54baf73d3bd39396e9.docx",
+            "新员工入职指南.docx"
+          ],
+          "vector_score": 0.3959,
+          "rerank_score": 0.3711,
+          "chunk_index": 0
+        }
+      ]
+    },
+    {
+      "id": "product_email_smtp",
+      "question": "企业邮箱配置失败时，SMTP服务器身份验证需要注意什么？",
+      "baseline_rank": 1,
+      "rerank_rank": 1,
+      "baseline_mrr": 1.0,
+      "rerank_mrr": 1.0,
+      "keyword_coverage": 1.0,
+      "baseline_top1_keyword_coverage": 1.0,
+      "rerank_top1_keyword_coverage": 1.0,
+      "baseline_answer_hit_at_1": true,
+      "rerank_answer_hit_at_1": true,
+      "rerank_top_sources": [
+        {
+          "rank": 1,
+          "file_names": [
+            "4d87ae0742c2414cb3b12b492f4b3e10.pdf",
+            "企业邮箱配置说明.pdf"
+          ],
+          "vector_score": 0.5625,
+          "rerank_score": 0.5371,
+          "chunk_index": 1
+        },
+        {
+          "rank": 2,
+          "file_names": [
+            "4d87ae0742c2414cb3b12b492f4b3e10.pdf",
+            "企业邮箱配置说明.pdf"
+          ],
+          "vector_score": 0.5139,
+          "rerank_score": 0.484,
+          "chunk_index": 0
+        },
+        {
+          "rank": 3,
+          "file_names": [
+            "4d87ae0742c2414cb3b12b492f4b3e10.pdf",
+            "企业邮箱配置说明.pdf"
+          ],
+          "vector_score": 0.532,
+          "rerank_score": 0.4815,
+          "chunk_index": 2
+        },
+        {
+          "rank": 4,
+          "file_names": [
+            "a352932212554d54baf73d3bd39396e9.docx",
+            "新员工入职指南.docx"
+          ],
+          "vector_score": 0.4231,
+          "rerank_score": 0.3679,
+          "chunk_index": 1
+        }
+      ]
+    },
+    {
+      "id": "product_email_capacity",
+      "question": "邮箱容量满了应该怎么处理？",
+      "baseline_rank": 1,
+      "rerank_rank": 1,
+      "baseline_mrr": 1.0,
+      "rerank_mrr": 1.0,
+      "keyword_coverage": 1.0,
+      "baseline_top1_keyword_coverage": 1.0,
+      "rerank_top1_keyword_coverage": 1.0,
+      "baseline_answer_hit_at_1": true,
+      "rerank_answer_hit_at_1": true,
+      "rerank_top_sources": [
+        {
+          "rank": 1,
+          "file_names": [
+            "4d87ae0742c2414cb3b12b492f4b3e10.pdf",
+            "企业邮箱配置说明.pdf"
+          ],
+          "vector_score": 0.5329,
+          "rerank_score": 0.5516,
+          "chunk_index": 2
+        },
+        {
+          "rank": 2,
+          "file_names": [
+            "4d87ae0742c2414cb3b12b492f4b3e10.pdf",
+            "企业邮箱配置说明.pdf"
+          ],
+          "vector_score": 0.4498,
+          "rerank_score": 0.4187,
+          "chunk_index": 0
+        },
+        {
+          "rank": 3,
+          "file_names": [
+            "4d87ae0742c2414cb3b12b492f4b3e10.pdf",
+            "企业邮箱配置说明.pdf"
+          ],
+          "vector_score": 0.4541,
+          "rerank_score": 0.3899,
+          "chunk_index": 1
+        },
+        {
+          "rank": 4,
+          "file_names": [
+            "a352932212554d54baf73d3bd39396e9.docx",
+            "新员工入职指南.docx"
+          ],
+          "vector_score": 0.3922,
+          "rerank_score": 0.3497,
+          "chunk_index": 2
+        }
+      ]
+    },
+    {
+      "id": "product_project_platform",
+      "question": "项目管理平台主要用于管理哪些内容？",
+      "baseline_rank": 1,
+      "rerank_rank": 1,
+      "baseline_mrr": 1.0,
+      "rerank_mrr": 1.0,
+      "keyword_coverage": 1.0,
+      "baseline_top1_keyword_coverage": 1.0,
+      "rerank_top1_keyword_coverage": 1.0,
+      "baseline_answer_hit_at_1": true,
+      "rerank_answer_hit_at_1": true,
+      "rerank_top_sources": [
+        {
+          "rank": 1,
+          "file_names": [
+            "f624b9d898c849669139c2dc63d7a651.md",
+            "项目管理平台操作指南.md"
+          ],
+          "vector_score": 0.5413,
+          "rerank_score": 0.4788,
+          "chunk_index": 0
+        },
+        {
+          "rank": 2,
+          "file_names": [
+            "f624b9d898c849669139c2dc63d7a651.md",
+            "项目管理平台操作指南.md"
+          ],
+          "vector_score": 0.4793,
+          "rerank_score": 0.4385,
+          "chunk_index": 1
+        },
+        {
+          "rank": 3,
+          "file_names": [
+            "a352932212554d54baf73d3bd39396e9.docx",
+            "新员工入职指南.docx"
+          ],
+          "vector_score": 0.409,
+          "rerank_score": 0.4043,
+          "chunk_index": 1
+        },
+        {
+          "rank": 4,
+          "file_names": [
+            "f624b9d898c849669139c2dc63d7a651.md",
+            "项目管理平台操作指南.md"
+          ],
+          "vector_score": 0.4966,
+          "rerank_score": 0.4036,
+          "chunk_index": 3
+        }
+      ]
+    },
+    {
+      "id": "product_new_employee_it",
+      "question": "新员工入职后IT部门会开通哪些系统账号？",
+      "baseline_rank": 1,
+      "rerank_rank": 1,
+      "baseline_mrr": 1.0,
+      "rerank_mrr": 1.0,
+      "keyword_coverage": 1.0,
+      "baseline_top1_keyword_coverage": 1.0,
+      "rerank_top1_keyword_coverage": 1.0,
+      "baseline_answer_hit_at_1": true,
+      "rerank_answer_hit_at_1": true,
+      "rerank_top_sources": [
+        {
+          "rank": 1,
+          "file_names": [
+            "a352932212554d54baf73d3bd39396e9.docx",
+            "新员工入职指南.docx"
+          ],
+          "vector_score": 0.5677,
+          "rerank_score": 0.5984,
+          "chunk_index": 1
+        },
+        {
+          "rank": 2,
+          "file_names": [
+            "3b5c9e5aa69c461480de66cf0e3da30e.txt",
+            "企业OA系统使用手册.txt"
+          ],
+          "vector_score": 0.4478,
+          "rerank_score": 0.5117,
+          "chunk_index": 0
+        },
+        {
+          "rank": 3,
+          "file_names": [
+            "a352932212554d54baf73d3bd39396e9.docx",
+            "新员工入职指南.docx"
+          ],
+          "vector_score": 0.473,
+          "rerank_score": 0.5104,
+          "chunk_index": 0
+        },
+        {
+          "rank": 4,
+          "file_names": [
+            "a352932212554d54baf73d3bd39396e9.docx",
+            "新员工入职指南.docx"
+          ],
+          "vector_score": 0.4737,
+          "rerank_score": 0.4844,
+          "chunk_index": 2
+        }
+      ]
+    },
+    {
+      "id": "policy_absence_penalty",
+      "question": "如果没请假就不到岗，会怎么处理？",
+      "baseline_rank": 1,
+      "rerank_rank": 1,
+      "baseline_mrr": 1.0,
+      "rerank_mrr": 1.0,
+      "keyword_coverage": 1.0,
+      "baseline_top1_keyword_coverage": 0.3333,
+      "rerank_top1_keyword_coverage": 0.3333,
+      "baseline_answer_hit_at_1": false,
+      "rerank_answer_hit_at_1": false,
+      "rerank_top_sources": [
+        {
+          "rank": 1,
+          "file_names": [
+            "061fc6f69b4c49949917d3b18466911a.md",
+            "员工请假管理办法.md"
+          ],
+          "vector_score": 0.5229,
+          "rerank_score": 0.4732,
+          "chunk_index": 3
+        },
+        {
+          "rank": 2,
+          "file_names": [
+            "59963262a75a4995880c3cc6ac6828c0.txt",
+            "公司考勤管理制度.txt"
+          ],
+          "vector_score": 0.475,
+          "rerank_score": 0.431,
+          "chunk_index": 1
+        },
+        {
+          "rank": 3,
+          "file_names": [
+            "061fc6f69b4c49949917d3b18466911a.md",
+            "员工请假管理办法.md"
+          ],
+          "vector_score": 0.4675,
+          "rerank_score": 0.3928,
+          "chunk_index": 2
+        },
+        {
+          "rank": 4,
+          "file_names": [
+            "3feba57396754d42b44253b29bfdff6c.docx",
+            "员工行为规范手册.docx"
+          ],
+          "vector_score": 0.4382,
+          "rerank_score": 0.3515,
+          "chunk_index": 1
+        }
+      ]
+    },
+    {
+      "id": "policy_emergency_leave",
+      "question": "紧急情况来不及请假，需要什么时候补办手续？",
+      "baseline_rank": 1,
+      "rerank_rank": 1,
+      "baseline_mrr": 1.0,
+      "rerank_mrr": 1.0,
+      "keyword_coverage": 1.0,
+      "baseline_top1_keyword_coverage": 0.0,
+      "rerank_top1_keyword_coverage": 1.0,
+      "baseline_answer_hit_at_1": false,
+      "rerank_answer_hit_at_1": true,
+      "rerank_top_sources": [
+        {
+          "rank": 1,
+          "file_names": [
+            "061fc6f69b4c49949917d3b18466911a.md",
+            "员工请假管理办法.md"
+          ],
+          "vector_score": 0.4967,
+          "rerank_score": 0.4956,
+          "chunk_index": 2
+        },
+        {
+          "rank": 2,
+          "file_names": [
+            "59963262a75a4995880c3cc6ac6828c0.txt",
+            "公司考勤管理制度.txt"
+          ],
+          "vector_score": 0.4424,
+          "rerank_score": 0.4057,
+          "chunk_index": 1
+        },
+        {
+          "rank": 3,
+          "file_names": [
+            "061fc6f69b4c49949917d3b18466911a.md",
+            "员工请假管理办法.md"
+          ],
+          "vector_score": 0.5033,
+          "rerank_score": 0.3908,
+          "chunk_index": 3
+        },
+        {
+          "rank": 4,
+          "file_names": [
+            "3feba57396754d42b44253b29bfdff6c.docx",
+            "员工行为规范手册.docx"
+          ],
+          "vector_score": 0.4324,
+          "rerank_score": 0.3811,
+          "chunk_index": 1
+        }
+      ]
+    },
+    {
+      "id": "policy_leave_over_5_days",
+      "question": "请假超过5天需要谁审批？",
+      "baseline_rank": 1,
+      "rerank_rank": 1,
+      "baseline_mrr": 1.0,
+      "rerank_mrr": 1.0,
+      "keyword_coverage": 1.0,
+      "baseline_top1_keyword_coverage": 1.0,
+      "rerank_top1_keyword_coverage": 0.0,
+      "baseline_answer_hit_at_1": true,
+      "rerank_answer_hit_at_1": false,
+      "rerank_top_sources": [
+        {
+          "rank": 1,
+          "file_names": [
+            "061fc6f69b4c49949917d3b18466911a.md",
+            "员工请假管理办法.md"
+          ],
+          "vector_score": 0.4726,
+          "rerank_score": 0.5239,
+          "chunk_index": 0
+        },
+        {
+          "rank": 2,
+          "file_names": [
+            "061fc6f69b4c49949917d3b18466911a.md",
+            "员工请假管理办法.md"
+          ],
+          "vector_score": 0.5105,
+          "rerank_score": 0.4985,
+          "chunk_index": 2
+        },
+        {
+          "rank": 3,
+          "file_names": [
+            "061fc6f69b4c49949917d3b18466911a.md",
+            "员工请假管理办法.md"
+          ],
+          "vector_score": 0.5033,
+          "rerank_score": 0.4771,
+          "chunk_index": 3
+        },
+        {
+          "rank": 4,
+          "file_names": [
+            "59963262a75a4995880c3cc6ac6828c0.txt",
+            "公司考勤管理制度.txt"
+          ],
+          "vector_score": 0.4393,
+          "rerank_score": 0.4522,
+          "chunk_index": 1
+        }
+      ]
+    },
+    {
+      "id": "policy_late_penalty",
+      "question": "迟到超过1小时会怎么处理？",
+      "baseline_rank": 1,
+      "rerank_rank": 1,
+      "baseline_mrr": 1.0,
+      "rerank_mrr": 1.0,
+      "keyword_coverage": 1.0,
+      "baseline_top1_keyword_coverage": 1.0,
+      "rerank_top1_keyword_coverage": 1.0,
+      "baseline_answer_hit_at_1": true,
+      "rerank_answer_hit_at_1": true,
+      "rerank_top_sources": [
+        {
+          "rank": 1,
+          "file_names": [
+            "59963262a75a4995880c3cc6ac6828c0.txt",
+            "公司考勤管理制度.txt"
+          ],
+          "vector_score": 0.4851,
+          "rerank_score": 0.5199,
+          "chunk_index": 1
+        },
+        {
+          "rank": 2,
+          "file_names": [
+            "061fc6f69b4c49949917d3b18466911a.md",
+            "员工请假管理办法.md"
+          ],
+          "vector_score": 0.476,
+          "rerank_score": 0.4185,
+          "chunk_index": 3
+        },
+        {
+          "rank": 3,
+          "file_names": [
+            "061fc6f69b4c49949917d3b18466911a.md",
+            "员工请假管理办法.md"
+          ],
+          "vector_score": 0.4165,
+          "rerank_score": 0.3662,
+          "chunk_index": 2
+        },
+        {
+          "rank": 4,
+          "file_names": [
+            "3feba57396754d42b44253b29bfdff6c.docx",
+            "员工行为规范手册.docx"
+          ],
+          "vector_score": 0.4155,
+          "rerank_score": 0.3246,
+          "chunk_index": 1
+        }
+      ]
+    },
+    {
+      "id": "tech_index_name",
+      "question": "联合索引命名格式是什么？",
+      "baseline_rank": 1,
+      "rerank_rank": 1,
+      "baseline_mrr": 1.0,
+      "rerank_mrr": 1.0,
+      "keyword_coverage": 1.0,
+      "baseline_top1_keyword_coverage": 1.0,
+      "rerank_top1_keyword_coverage": 0.0,
+      "baseline_answer_hit_at_1": true,
+      "rerank_answer_hit_at_1": false,
+      "rerank_top_sources": [
+        {
+          "rank": 1,
+          "file_names": [
+            "2ee9cc33b736429f97be205d94588829.pdf",
+            "数据库设计规范.pdf"
+          ],
+          "vector_score": 0.4667,
+          "rerank_score": 0.4928,
+          "chunk_index": 0
+        },
+        {
+          "rank": 2,
+          "file_names": [
+            "2ee9cc33b736429f97be205d94588829.pdf",
+            "数据库设计规范.pdf"
+          ],
+          "vector_score": 0.5019,
+          "rerank_score": 0.4526,
+          "chunk_index": 1
+        },
+        {
+          "rank": 3,
+          "file_names": [
+            "2ee9cc33b736429f97be205d94588829.pdf",
+            "数据库设计规范.pdf"
+          ],
+          "vector_score": 0.4632,
+          "rerank_score": 0.4274,
+          "chunk_index": 2
+        },
+        {
+          "rank": 4,
+          "file_names": [
+            "Python开发编码规范.txt",
+            "ec7591726edd4313b0390d25c183d7c2.txt"
+          ],
+          "vector_score": 0.4091,
+          "rerank_score": 0.3764,
+          "chunk_index": 1
+        }
+      ]
+    },
+    {
+      "id": "tech_table_time_fields",
+      "question": "所有表必须包含哪些时间字段？",
+      "baseline_rank": 1,
+      "rerank_rank": 1,
+      "baseline_mrr": 1.0,
+      "rerank_mrr": 1.0,
+      "keyword_coverage": 1.0,
+      "baseline_top1_keyword_coverage": 1.0,
+      "rerank_top1_keyword_coverage": 1.0,
+      "baseline_answer_hit_at_1": true,
+      "rerank_answer_hit_at_1": true,
+      "rerank_top_sources": [
+        {
+          "rank": 1,
+          "file_names": [
+            "2ee9cc33b736429f97be205d94588829.pdf",
+            "数据库设计规范.pdf"
+          ],
+          "vector_score": 0.4965,
+          "rerank_score": 0.5507,
+          "chunk_index": 1
+        },
+        {
+          "rank": 2,
+          "file_names": [
+            "API接口设计规范.md",
+            "e2ece8ca7ec243d1aa66827b902896c0.md"
+          ],
+          "vector_score": 0.4194,
+          "rerank_score": 0.4286,
+          "chunk_index": 2
+        },
+        {
+          "rank": 3,
+          "file_names": [
+            "API接口设计规范.md",
+            "e2ece8ca7ec243d1aa66827b902896c0.md"
+          ],
+          "vector_score": 0.3966,
+          "rerank_score": 0.4018,
+          "chunk_index": 4
+        },
+        {
+          "rank": 4,
+          "file_names": [
+            "2ee9cc33b736429f97be205d94588829.pdf",
+            "数据库设计规范.pdf"
+          ],
+          "vector_score": 0.4487,
+          "rerank_score": 0.3877,
+          "chunk_index": 0
+        }
+      ]
+    },
+    {
+      "id": "tech_api_deprecated_keep",
+      "question": "API废弃接口至少要保留多久？",
+      "baseline_rank": 1,
+      "rerank_rank": 1,
+      "baseline_mrr": 1.0,
+      "rerank_mrr": 1.0,
+      "keyword_coverage": 1.0,
+      "baseline_top1_keyword_coverage": 1.0,
+      "rerank_top1_keyword_coverage": 1.0,
+      "baseline_answer_hit_at_1": true,
+      "rerank_answer_hit_at_1": true,
+      "rerank_top_sources": [
+        {
+          "rank": 1,
+          "file_names": [
+            "API接口设计规范.md",
+            "e2ece8ca7ec243d1aa66827b902896c0.md"
+          ],
+          "vector_score": 0.487,
+          "rerank_score": 0.5075,
+          "chunk_index": 5
+        },
+        {
+          "rank": 2,
+          "file_names": [
+            "API接口设计规范.md",
+            "e2ece8ca7ec243d1aa66827b902896c0.md"
+          ],
+          "vector_score": 0.4472,
+          "rerank_score": 0.3589,
+          "chunk_index": 4
+        },
+        {
+          "rank": 3,
+          "file_names": [
+            "API接口设计规范.md",
+            "e2ece8ca7ec243d1aa66827b902896c0.md"
+          ],
+          "vector_score": 0.4342,
+          "rerank_score": 0.3504,
+          "chunk_index": 0
+        },
+        {
+          "rank": 4,
+          "file_names": [
+            "API接口设计规范.md",
+            "e2ece8ca7ec243d1aa66827b902896c0.md"
+          ],
+          "vector_score": 0.4484,
+          "rerank_score": 0.3324,
+          "chunk_index": 2
+        }
+      ]
+    },
+    {
+      "id": "tech_semver_parts",
+      "question": "语义化版本号由哪几部分组成？",
+      "baseline_rank": 1,
+      "rerank_rank": 1,
+      "baseline_mrr": 1.0,
+      "rerank_mrr": 1.0,
+      "keyword_coverage": 1.0,
+      "baseline_top1_keyword_coverage": 1.0,
+      "rerank_top1_keyword_coverage": 1.0,
+      "baseline_answer_hit_at_1": true,
+      "rerank_answer_hit_at_1": true,
+      "rerank_top_sources": [
+        {
+          "rank": 1,
+          "file_names": [
+            "74b977bd9f8545dca742bf7efc73969c.docx",
+            "Git版本管理规范.docx"
+          ],
+          "vector_score": 0.4783,
+          "rerank_score": 0.4669,
+          "chunk_index": 2
+        },
+        {
+          "rank": 2,
+          "file_names": [
+            "74b977bd9f8545dca742bf7efc73969c.docx",
+            "Git版本管理规范.docx"
+          ],
+          "vector_score": 0.4241,
+          "rerank_score": 0.3477,
+          "chunk_index": 0
+        },
+        {
+          "rank": 3,
+          "file_names": [
+            "API接口设计规范.md",
+            "e2ece8ca7ec243d1aa66827b902896c0.md"
+          ],
+          "vector_score": 0.4085,
+          "rerank_score": 0.3375,
+          "chunk_index": 5
+        },
+        {
+          "rank": 4,
+          "file_names": [
+            "Python开发编码规范.txt",
+            "ec7591726edd4313b0390d25c183d7c2.txt"
+          ],
+          "vector_score": 0.3861,
+          "rerank_score": 0.335,
+          "chunk_index": 1
+        }
+      ]
+    },
+    {
+      "id": "product_mail_attachment_limit",
+      "question": "单封邮件附件大小限制是多少？",
+      "baseline_rank": 1,
+      "rerank_rank": 1,
+      "baseline_mrr": 1.0,
+      "rerank_mrr": 1.0,
+      "keyword_coverage": 1.0,
+      "baseline_top1_keyword_coverage": 0.5,
+      "rerank_top1_keyword_coverage": 1.0,
+      "baseline_answer_hit_at_1": false,
+      "rerank_answer_hit_at_1": true,
+      "rerank_top_sources": [
+        {
+          "rank": 1,
+          "file_names": [
+            "4d87ae0742c2414cb3b12b492f4b3e10.pdf",
+            "企业邮箱配置说明.pdf"
+          ],
+          "vector_score": 0.4371,
+          "rerank_score": 0.5296,
+          "chunk_index": 0
+        },
+        {
+          "rank": 2,
+          "file_names": [
+            "4d87ae0742c2414cb3b12b492f4b3e10.pdf",
+            "企业邮箱配置说明.pdf"
+          ],
+          "vector_score": 0.4627,
+          "rerank_score": 0.4508,
+          "chunk_index": 2
+        },
+        {
+          "rank": 3,
+          "file_names": [
+            "3b5c9e5aa69c461480de66cf0e3da30e.txt",
+            "企业OA系统使用手册.txt"
+          ],
+          "vector_score": 0.409,
+          "rerank_score": 0.3749,
+          "chunk_index": 2
+        },
+        {
+          "rank": 4,
+          "file_names": [
+            "4d87ae0742c2414cb3b12b492f4b3e10.pdf",
+            "企业邮箱配置说明.pdf"
+          ],
+          "vector_score": 0.4158,
+          "rerank_score": 0.3112,
+          "chunk_index": 1
+        }
+      ]
+    },
+    {
+      "id": "product_mail_capacity_warning",
+      "question": "邮箱容量超过多少会提醒？",
+      "baseline_rank": 1,
+      "rerank_rank": 1,
+      "baseline_mrr": 1.0,
+      "rerank_mrr": 1.0,
+      "keyword_coverage": 1.0,
+      "baseline_top1_keyword_coverage": 0.0,
+      "rerank_top1_keyword_coverage": 1.0,
+      "baseline_answer_hit_at_1": false,
+      "rerank_answer_hit_at_1": true,
+      "rerank_top_sources": [
+        {
+          "rank": 1,
+          "file_names": [
+            "4d87ae0742c2414cb3b12b492f4b3e10.pdf",
+            "企业邮箱配置说明.pdf"
+          ],
+          "vector_score": 0.4725,
+          "rerank_score": 0.5214,
+          "chunk_index": 0
+        },
+        {
+          "rank": 2,
+          "file_names": [
+            "4d87ae0742c2414cb3b12b492f4b3e10.pdf",
+            "企业邮箱配置说明.pdf"
+          ],
+          "vector_score": 0.5246,
+          "rerank_score": 0.4553,
+          "chunk_index": 2
+        },
+        {
+          "rank": 3,
+          "file_names": [
+            "4d87ae0742c2414cb3b12b492f4b3e10.pdf",
+            "企业邮箱配置说明.pdf"
+          ],
+          "vector_score": 0.4584,
+          "rerank_score": 0.3551,
+          "chunk_index": 1
+        },
+        {
+          "rank": 4,
+          "file_names": [
+            "a352932212554d54baf73d3bd39396e9.docx",
+            "新员工入职指南.docx"
+          ],
+          "vector_score": 0.4114,
+          "rerank_score": 0.3531,
+          "chunk_index": 1
+        }
+      ]
+    },
+    {
+      "id": "product_oa_lock",
+      "question": "OA连续输错密码几次会锁定多久？",
+      "baseline_rank": 1,
+      "rerank_rank": 1,
+      "baseline_mrr": 1.0,
+      "rerank_mrr": 1.0,
+      "keyword_coverage": 1.0,
+      "baseline_top1_keyword_coverage": 1.0,
+      "rerank_top1_keyword_coverage": 1.0,
+      "baseline_answer_hit_at_1": true,
+      "rerank_answer_hit_at_1": true,
+      "rerank_top_sources": [
+        {
+          "rank": 1,
+          "file_names": [
+            "3b5c9e5aa69c461480de66cf0e3da30e.txt",
+            "企业OA系统使用手册.txt"
+          ],
+          "vector_score": 0.4613,
+          "rerank_score": 0.4498,
+          "chunk_index": 0
+        },
+        {
+          "rank": 2,
+          "file_names": [
+            "3b5c9e5aa69c461480de66cf0e3da30e.txt",
+            "企业OA系统使用手册.txt"
+          ],
+          "vector_score": 0.4515,
+          "rerank_score": 0.3742,
+          "chunk_index": 3
+        },
+        {
+          "rank": 3,
+          "file_names": [
+            "a352932212554d54baf73d3bd39396e9.docx",
+            "新员工入职指南.docx"
+          ],
+          "vector_score": 0.4455,
+          "rerank_score": 0.3588,
+          "chunk_index": 1
+        },
+        {
+          "rank": 4,
+          "file_names": [
+            "a352932212554d54baf73d3bd39396e9.docx",
+            "新员工入职指南.docx"
+          ],
+          "vector_score": 0.4553,
+          "rerank_score": 0.3536,
+          "chunk_index": 2
+        }
+      ]
+    },
+    {
+      "id": "product_task_priority",
+      "question": "项目任务有哪些优先级？",
+      "baseline_rank": 1,
+      "rerank_rank": 1,
+      "baseline_mrr": 1.0,
+      "rerank_mrr": 1.0,
+      "keyword_coverage": 1.0,
+      "baseline_top1_keyword_coverage": 0.25,
+      "rerank_top1_keyword_coverage": 1.0,
+      "baseline_answer_hit_at_1": false,
+      "rerank_answer_hit_at_1": true,
+      "rerank_top_sources": [
+        {
+          "rank": 1,
+          "file_names": [
+            "f624b9d898c849669139c2dc63d7a651.md",
+            "项目管理平台操作指南.md"
+          ],
+          "vector_score": 0.4889,
+          "rerank_score": 0.4766,
+          "chunk_index": 1
+        },
+        {
+          "rank": 2,
+          "file_names": [
+            "f624b9d898c849669139c2dc63d7a651.md",
+            "项目管理平台操作指南.md"
+          ],
+          "vector_score": 0.4616,
+          "rerank_score": 0.4765,
+          "chunk_index": 2
+        },
+        {
+          "rank": 3,
+          "file_names": [
+            "f624b9d898c849669139c2dc63d7a651.md",
+            "项目管理平台操作指南.md"
+          ],
+          "vector_score": 0.4415,
+          "rerank_score": 0.4458,
+          "chunk_index": 0
+        },
+        {
+          "rank": 4,
+          "file_names": [
+            "f624b9d898c849669139c2dc63d7a651.md",
+            "项目管理平台操作指南.md"
+          ],
+          "vector_score": 0.4902,
+          "rerank_score": 0.3892,
+          "chunk_index": 4
+        }
+      ]
+    },
+    {
+      "id": "product_reedit_submitted_process",
+      "question": "已提交但还没审批完的流程怎么修改？",
+      "baseline_rank": 1,
+      "rerank_rank": 1,
+      "baseline_mrr": 1.0,
+      "rerank_mrr": 1.0,
+      "keyword_coverage": 1.0,
+      "baseline_top1_keyword_coverage": 1.0,
+      "rerank_top1_keyword_coverage": 1.0,
+      "baseline_answer_hit_at_1": true,
+      "rerank_answer_hit_at_1": true,
+      "rerank_top_sources": [
+        {
+          "rank": 1,
+          "file_names": [
+            "3b5c9e5aa69c461480de66cf0e3da30e.txt",
+            "企业OA系统使用手册.txt"
+          ],
+          "vector_score": 0.5411,
+          "rerank_score": 0.569,
+          "chunk_index": 3
+        },
+        {
+          "rank": 2,
+          "file_names": [
+            "3b5c9e5aa69c461480de66cf0e3da30e.txt",
+            "企业OA系统使用手册.txt"
+          ],
+          "vector_score": 0.4554,
+          "rerank_score": 0.3995,
+          "chunk_index": 1
+        },
+        {
+          "rank": 3,
+          "file_names": [
+            "f624b9d898c849669139c2dc63d7a651.md",
+            "项目管理平台操作指南.md"
+          ],
+          "vector_score": 0.4445,
+          "rerank_score": 0.382,
+          "chunk_index": 2
+        },
+        {
+          "rank": 4,
+          "file_names": [
+            "3b5c9e5aa69c461480de66cf0e3da30e.txt",
+            "企业OA系统使用手册.txt"
+          ],
+          "vector_score": 0.3944,
+          "rerank_score": 0.3598,
+          "chunk_index": 0
+        }
+      ]
+    }
+  ]
+}

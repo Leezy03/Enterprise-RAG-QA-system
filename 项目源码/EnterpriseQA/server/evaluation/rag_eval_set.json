@@ -1,0 +1,198 @@
+[
+  {
+    "id": "policy_annual_leave_10_years",
+    "kb_name": "公司规章制度",
+    "question": "我累计工作11年，可以休几天年假？",
+    "expected_sources": ["员工请假管理办法.md"],
+    "expected_keywords": ["10天", "年假", "年休假"]
+  },
+  {
+    "id": "policy_leave_approval",
+    "kb_name": "公司规章制度",
+    "question": "请假需要提前申请并获得批准吗？",
+    "expected_sources": ["员工请假管理办法.md", "员工行为规范手册.docx"],
+    "expected_keywords": ["提前申请", "批准", "请假"]
+  },
+  {
+    "id": "policy_work_time",
+    "kb_name": "公司规章制度",
+    "question": "公司的上班时间和午休时间是什么？",
+    "expected_sources": ["公司考勤管理制度.txt"],
+    "expected_keywords": ["9:00", "18:00", "12:00", "13:00"]
+  },
+  {
+    "id": "policy_salary_promotion",
+    "kb_name": "公司规章制度",
+    "question": "员工晋升后薪酬会如何调整？",
+    "expected_sources": ["公司薪酬福利制度.pdf"],
+    "expected_keywords": ["晋升", "岗位等级", "薪酬"]
+  },
+  {
+    "id": "tech_db_engine",
+    "kb_name": "技术文档库",
+    "question": "公司数据库表应该使用什么存储引擎和字符集？",
+    "expected_sources": ["数据库设计规范.pdf"],
+    "expected_keywords": ["InnoDB", "utf8mb4", "字符集"]
+  },
+  {
+    "id": "tech_db_integer",
+    "kb_name": "技术文档库",
+    "question": "开发数据库字段时，整数类型应该优先用什么？",
+    "expected_sources": ["数据库设计规范.pdf"],
+    "expected_keywords": ["INT", "BIGINT", "整数"]
+  },
+  {
+    "id": "tech_api_doc",
+    "kb_name": "技术文档库",
+    "question": "API接口文档需要包含哪些内容？",
+    "expected_sources": ["API接口设计规范.md"],
+    "expected_keywords": ["接口描述", "请求方式", "URL", "请求参数", "响应参数"]
+  },
+  {
+    "id": "tech_git_release",
+    "kb_name": "技术文档库",
+    "question": "版本发布时 release 分支应该从哪个分支创建？",
+    "expected_sources": ["Git版本管理规范.docx"],
+    "expected_keywords": ["develop", "release", "发布"]
+  },
+  {
+    "id": "tech_python_password",
+    "kb_name": "技术文档库",
+    "question": "Python项目中密码和密钥可以硬编码在代码里吗？",
+    "expected_sources": ["Python开发编码规范.txt"],
+    "expected_keywords": ["禁止", "硬编码", "密码", "密钥"]
+  },
+  {
+    "id": "product_oa_password",
+    "kb_name": "产品帮助中心",
+    "question": "企业OA系统的登录密码可以设置成6位吗？",
+    "expected_sources": ["企业OA系统使用手册.txt"],
+    "expected_keywords": ["不少于8位", "密码", "OA"]
+  },
+  {
+    "id": "product_oa_meeting_room",
+    "kb_name": "产品帮助中心",
+    "question": "会议室使用前需要通过什么系统预约？",
+    "expected_sources": ["新员工入职指南.docx"],
+    "expected_keywords": ["OA系统", "会议室", "预约"]
+  },
+  {
+    "id": "product_email_smtp",
+    "kb_name": "产品帮助中心",
+    "question": "企业邮箱配置失败时，SMTP服务器身份验证需要注意什么？",
+    "expected_sources": ["企业邮箱配置说明.pdf"],
+    "expected_keywords": ["SMTP", "身份验证", "完整邮箱地址"]
+  },
+  {
+    "id": "product_email_capacity",
+    "kb_name": "产品帮助中心",
+    "question": "邮箱容量满了应该怎么处理？",
+    "expected_sources": ["企业邮箱配置说明.pdf"],
+    "expected_keywords": ["清理", "附件", "归档", "扩容"]
+  },
+  {
+    "id": "product_project_platform",
+    "kb_name": "产品帮助中心",
+    "question": "项目管理平台主要用于管理哪些内容？",
+    "expected_sources": ["项目管理平台操作指南.md"],
+    "expected_keywords": ["项目", "任务", "进度"]
+  },
+  {
+    "id": "product_new_employee_it",
+    "kb_name": "产品帮助中心",
+    "question": "新员工入职后IT部门会开通哪些系统账号？",
+    "expected_sources": ["新员工入职指南.docx"],
+    "expected_keywords": ["IT", "系统账号", "电脑登录账号"]
+  },
+  {
+    "id": "policy_absence_penalty",
+    "kb_name": "公司规章制度",
+    "question": "如果没请假就不到岗，会怎么处理？",
+    "expected_sources": ["公司考勤管理制度.txt", "员工请假管理办法.md"],
+    "expected_keywords": ["旷工", "扣除3天工资", "解除劳动合同"]
+  },
+  {
+    "id": "policy_emergency_leave",
+    "kb_name": "公司规章制度",
+    "question": "紧急情况来不及请假，需要什么时候补办手续？",
+    "expected_sources": ["员工请假管理办法.md"],
+    "expected_keywords": ["电话", "直属主管", "1个工作日"]
+  },
+  {
+    "id": "policy_leave_over_5_days",
+    "kb_name": "公司规章制度",
+    "question": "请假超过5天需要谁审批？",
+    "expected_sources": ["员工请假管理办法.md"],
+    "expected_keywords": ["分管副总", "人力资源部", "部门负责人"]
+  },
+  {
+    "id": "policy_late_penalty",
+    "kb_name": "公司规章制度",
+    "question": "迟到超过1小时会怎么处理？",
+    "expected_sources": ["公司考勤管理制度.txt"],
+    "expected_keywords": ["迟到1小时以上", "旷工半天"]
+  },
+  {
+    "id": "tech_index_name",
+    "kb_name": "技术文档库",
+    "question": "联合索引命名格式是什么？",
+    "expected_sources": ["数据库设计规范.pdf"],
+    "expected_keywords": ["idx_表名_字段1_字段2", "联合索引"]
+  },
+  {
+    "id": "tech_table_time_fields",
+    "kb_name": "技术文档库",
+    "question": "所有表必须包含哪些时间字段？",
+    "expected_sources": ["数据库设计规范.pdf"],
+    "expected_keywords": ["create_time", "update_time"]
+  },
+  {
+    "id": "tech_api_deprecated_keep",
+    "kb_name": "技术文档库",
+    "question": "API废弃接口至少要保留多久？",
+    "expected_sources": ["API接口设计规范.md"],
+    "expected_keywords": ["废弃", "3个月"]
+  },
+  {
+    "id": "tech_semver_parts",
+    "kb_name": "技术文档库",
+    "question": "语义化版本号由哪几部分组成？",
+    "expected_sources": ["Git版本管理规范.docx"],
+    "expected_keywords": ["主版本号", "次版本号", "修订号"]
+  },
+  {
+    "id": "product_mail_attachment_limit",
+    "kb_name": "产品帮助中心",
+    "question": "单封邮件附件大小限制是多少？",
+    "expected_sources": ["企业邮箱配置说明.pdf"],
+    "expected_keywords": ["50MB", "附件"]
+  },
+  {
+    "id": "product_mail_capacity_warning",
+    "kb_name": "产品帮助中心",
+    "question": "邮箱容量超过多少会提醒？",
+    "expected_sources": ["企业邮箱配置说明.pdf"],
+    "expected_keywords": ["10GB", "80%", "提醒"]
+  },
+  {
+    "id": "product_oa_lock",
+    "kb_name": "产品帮助中心",
+    "question": "OA连续输错密码几次会锁定多久？",
+    "expected_sources": ["企业OA系统使用手册.txt"],
+    "expected_keywords": ["5次", "30分钟", "锁定"]
+  },
+  {
+    "id": "product_task_priority",
+    "kb_name": "产品帮助中心",
+    "question": "项目任务有哪些优先级？",
+    "expected_sources": ["项目管理平台操作指南.md"],
+    "expected_keywords": ["紧急", "高", "中", "低"]
+  },
+  {
+    "id": "product_reedit_submitted_process",
+    "kb_name": "产品帮助中心",
+    "question": "已提交但还没审批完的流程怎么修改？",
+    "expected_sources": ["企业OA系统使用手册.txt"],
+    "expected_keywords": ["撤回", "重新编辑", "提交"]
+  }
+]
