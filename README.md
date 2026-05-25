@@ -6,17 +6,18 @@
 
 - 前端：Vue 3 + Vite + Element Plus + Pinia + Vue Router
 - 后端：Flask + SQLAlchemy + JWT
-- RAG 组件：LangChain + ChromaDB + Ollama
+- RAG 组件：LangChain + ChromaDB + Ollama + BM25 Hybrid Retrieval
 - 数据库：MySQL 8
 
 ## 核心设计与技术亮点
 
 - 多轮上下文检索：问答接口会读取同一会话最近几轮历史，并将追问改写为独立检索问题，提升省略指代类问题的召回效果。
 - 流式问答输出：提供 SSE 流式问答接口，前端可边生成边展示回答，降低长回答场景下的等待感。
-- 检索结果重排：采用“向量召回 TopN + 轻量 Rerank + TopK 入 Prompt”的检索流程，融合向量相似度、关键词覆盖、文件名命中和短语命中。
-- 来源引用增强：RAG 上下文按来源编号组织，回答中要求标注来源编号，前端展示文件名、片段序号与可选相似度。
+- Hybrid Retrieval：采用“向量召回 + BM25 词法召回 + RRF 融合 + Rerank + TopK 入 Prompt”的检索流程，兼顾语义相似、专有名词、编号、英文缩写和制度条款精确匹配。
+- 分类型文档切分：针对 `txt/pdf/md/docx` 使用不同 chunk size 与 overlap；Markdown 先按标题层级切分，PDF 保留页码，DOCX 保留章节与段落范围。
+- 来源追踪增强：向量库 metadata 中保留文件名、文件类型、页码、标题路径、章节、段落范围、字符范围、chunk 策略和检索分数；前端独立展示参考来源。
 - 向量检索封装：将 Chroma 向量库创建与检索逻辑下沉到 VectorService，支持带相似度分数的检索并提供降级方案。
-- RAG 评测集：提供检索评测脚本，对比 Rerank 前后的 Hit@K、Hit@1、MRR 和关键词覆盖率，便于量化优化效果。
+- RAG 评测集：提供检索评测脚本，对比 Rerank 前后以及不同 chunk 策略下的 Hit@K、Hit@1、MRR 和关键词覆盖率，便于量化优化效果。
 - 本地部署配置化：支持通过 `.env` 配置数据库、Ollama 模型、Chroma 持久化目录和 RAG 历史轮数，避免把本地环境信息写死在源码中。
 - 仓库清理规范：通过 `.gitignore` 排除 `node_modules`、`__pycache__`、上传文件、Chroma 持久化数据等运行时产物。
 
@@ -25,13 +26,13 @@
 - 用户登录与身份认证
 - 管理员首页统计看板
 - 知识库新增、编辑、删除、列表查询
-- 文档上传、向量化、删除、分页查询
+- 文档上传、向量化、重新向量化、删除、分页查询
 - 基于知识库的 RAG 智能问答
 - SSE 流式回答输出
 - 多轮追问问题改写与上下文补全
-- 向量召回后的 Rerank 重排
-- 回答参考来源、片段序号与相似度展示
-- RAG 检索评测与指标统计
+- 向量召回、BM25 词法召回、RRF 融合与 Rerank 重排
+- 回答参考来源、页码 / 标题路径 / 章节 / 片段序号与相似度展示
+- RAG 检索评测、chunk 策略对比与指标统计
 - 对话历史分页查询与按会话查看
 - 普通用户 / 管理员权限隔离
 
@@ -85,10 +86,12 @@
 │  │     │  ├─stats.py
 │  │     │  └─user.py
 │  │     ├─services                    # RAG 与向量化服务
+│  │     │  ├─bm25_service.py
 │  │     │  ├─rag_service.py
 │  │     │  ├─rerank_service.py
 │  │     │  └─vector_service.py
 │  │     ├─evaluation                  # RAG 检索评测集与评测脚本
+│  │     │  ├─chunk_strategy_presets.example.json
 │  │     │  ├─rag_eval_set.json
 │  │     │  └─evaluate_rag.py
 │  │     ├─sql
@@ -294,6 +297,13 @@ $env:OLLAMA_EMBED_MODEL="qwen3-embedding:4b"
 RETRIEVER_TOP_K=4
 RERANK_ENABLED=true
 RERANK_CANDIDATE_K=12
+HYBRID_SEARCH_ENABLED=true
+HYBRID_KEYWORD_CANDIDATE_K=12
+HYBRID_KEYWORD_SCAN_LIMIT=2000
+HYBRID_RRF_K=60
+BM25_K1=1.5
+BM25_B=0.75
+BM25_INCLUDE_METADATA=true
 RAG_HISTORY_TURNS=3
 ```
 
@@ -302,7 +312,44 @@ RAG_HISTORY_TURNS=3
 - `RETRIEVER_TOP_K`：最终进入 Prompt 的片段数量。
 - `RERANK_ENABLED`：是否启用召回后的轻量重排。
 - `RERANK_CANDIDATE_K`：向量检索初始召回候选数，重排后再截取 TopK。
+- `HYBRID_SEARCH_ENABLED`：是否启用向量召回与 BM25 召回融合。
+- `HYBRID_KEYWORD_CANDIDATE_K`：BM25 分支返回的候选片段数量。
+- `HYBRID_KEYWORD_SCAN_LIMIT`：从当前 Chroma collection 读取并参与 BM25 计算的最大片段数。
+- `HYBRID_RRF_K`：RRF 融合排序参数。
+- `BM25_K1` / `BM25_B`：BM25 词频饱和与文档长度归一化参数。
+- `BM25_INCLUDE_METADATA`：BM25 检索文本是否拼接文件名、标题路径、章节等 metadata。
 - `RAG_HISTORY_TURNS`：多轮问答中用于问题改写的最近历史轮数。
+
+文档切分参数也支持通过 `.env` 调整：
+
+```text
+CHUNK_SIZE=500
+CHUNK_OVERLAP=50
+TXT_CHUNK_SIZE=500
+TXT_CHUNK_OVERLAP=50
+PDF_CHUNK_SIZE=450
+PDF_CHUNK_OVERLAP=80
+MD_CHUNK_SIZE=800
+MD_CHUNK_OVERLAP=100
+DOCX_CHUNK_SIZE=700
+DOCX_CHUNK_OVERLAP=100
+```
+
+当前 RAG 检索链路：
+
+```text
+用户问题
+-> 多轮问题改写
+-> 向量召回
+-> BM25 词法召回
+-> RRF 融合
+-> 轻量 Rerank
+-> Prompt 拼接
+-> Ollama LLM 生成答案
+-> 前端展示答案与参考来源
+```
+
+说明：当前 BM25 使用真实 BM25 公式，但索引是在检索时基于 Chroma collection 临时构建的内存索引，适合中小规模知识库。生产级大规模场景可以替换为 Elasticsearch / OpenSearch 持久化倒排索引。
 
 执行 RAG 检索评测：
 
@@ -319,6 +366,23 @@ python evaluation\evaluate_rag.py
 - `关键词覆盖率`：TopK 片段对标准关键词的覆盖比例。
 
 评测结果会输出到 `项目源码/EnterpriseQA/server/evaluation/results/`，可用于量化 Rerank 优化效果。
+
+对比不同 chunk 策略：
+
+```powershell
+python evaluation\evaluate_rag.py --compare-chunk-strategies
+```
+
+使用自定义策略文件：
+
+```powershell
+python evaluation\evaluate_rag.py --compare-chunk-strategies --chunk-strategy-file evaluation\chunk_strategy_presets.example.json
+```
+
+chunk 策略评测会为每组策略创建临时 Chroma collection，重新索引同一批文档，评测结束后默认删除临时 collection，不会污染正式知识库。结果输出到：
+
+- `evaluation/results/chunk_strategy_eval_report.json`
+- `evaluation/results/chunk_strategy_eval_details.csv`
 
 基于当前示例知识库的本地评测结果：
 
@@ -458,7 +522,7 @@ npm -v
 
 - /api/auth：登录、用户信息
 - /api/knowledge_base：知识库管理
-- /api/document：文档管理与上传
+- /api/document：文档管理、上传、删除与重新向量化
 - /api/chat：智能问答、流式问答、历史会话
 - /api/user：用户管理
 - /api/stats：统计信息
@@ -483,6 +547,7 @@ npm -v
 - 增加接口文档
 - 增加自动化测试
 - 增加 Docker 部署方式
-- 增加流式输出、Rerank 与 RAG 评测集
+- 将当前内存 BM25 升级为 Elasticsearch / OpenSearch 持久化倒排索引
+- 增加更完整的 metadata filtering、召回阈值控制和线上检索监控
 
 如果你当前的后端或前端仍然启动失败，建议把终端报错完整贴出来，再按报错逐项修复。这个项目大多数启动失败都集中在依赖未安装、MySQL 未就绪、Ollama 未启动三类问题上。
