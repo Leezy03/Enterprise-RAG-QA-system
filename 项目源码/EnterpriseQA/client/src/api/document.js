@@ -20,3 +20,10 @@ export function uploadDoc(data) {
 export function deleteDoc(id) {
   return request.delete(`/document/${id}`)
 }
+
+/** 重新向量化文档 */
+export function revectorizeDoc(id) {
+  return request.post(`/document/${id}/revectorize`, null, {
+    timeout: 300000
+  })
+}

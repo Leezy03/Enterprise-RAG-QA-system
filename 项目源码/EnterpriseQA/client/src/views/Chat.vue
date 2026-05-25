@@ -40,7 +40,9 @@
           <h3>欢迎使用企业知识库问答系统</h3>
           <p>请从左侧选择知识库，然后输入您的问题</p>
         </div>
-        <ChatMessage v-for="(msg, i) in messages" :key="i" :message="msg" />
+        <template v-for="(msg, i) in messages" :key="i">
+          <ChatMessage v-if="shouldShowMessage(msg)" :message="msg" />
+        </template>
         <!-- 加载中提示 -->
         <div v-if="asking && !streamingStarted" class="loading-msg">
           <el-avatar :size="36" :icon="Monitor" style="background-color: #67c23a" />
@@ -84,8 +86,14 @@
  * 支持多轮对话，展示AI回答和参考来源
  */
 import { ref, onMounted, nextTick } from 'vue'
-import { ElMessage } from 'element-plus'
-import { Promotion, Loading, Monitor } from '@element-plus/icons-vue'
+import {
+  ChatDotRound,
+  ChatDotSquare,
+  FolderOpened,
+  Loading,
+  Monitor,
+  Promotion
+} from '@element-plus/icons-vue'
 import { getAllKB } from '../api/knowledge'
 import { askQuestionStream } from '../api/chat'
 import ChatMessage from '../components/ChatMessage.vue'
@@ -138,6 +146,21 @@ async function scrollToBottom() {
   }
 }
 
+/** 更新AI消息，确保通过响应式数组触发页面刷新 */
+function updateAiMessage(index, patch) {
+  const current = messages.value[index]
+  if (!current) return
+  messages.value[index] = {
+    ...current,
+    ...patch
+  }
+}
+
+/** 空的AI占位消息不渲染，避免和“思考中”提示同时出现 */
+function shouldShowMessage(message) {
+  return message.role === 'user' || Boolean(message.content) || Boolean(message.sources?.length)
+}
+
 /** 发送问题 */
 async function sendQuestion() {
   const q = question.value.trim()
@@ -151,12 +174,12 @@ async function sendQuestion() {
   scrollToBottom()
 
   try {
-    const aiMessage = {
+    messages.value.push({
       role: 'ai',
       content: '',
       sources: []
-    }
-    messages.value.push(aiMessage)
+    })
+    const aiMessageIndex = messages.value.length - 1
 
     await askQuestionStream({
       question: q,
@@ -168,21 +191,31 @@ async function sendQuestion() {
       },
       onChunk: (chunk) => {
         streamingStarted.value = true
-        aiMessage.content += chunk
+        const currentContent = messages.value[aiMessageIndex]?.content || ''
+        updateAiMessage(aiMessageIndex, { content: currentContent + chunk })
         scrollToBottom()
       },
       onDone: (data) => {
-        aiMessage.sources = data.source_docs || []
+        const currentContent = messages.value[aiMessageIndex]?.content || ''
+        updateAiMessage(aiMessageIndex, {
+          content: currentContent || data.answer || '',
+          sources: data.source_docs || []
+        })
         if (data.session_id) sessionId.value = data.session_id
       },
       onError: (data) => {
-        aiMessage.content = data.message || '抱歉，服务出现异常，请稍后重试。'
+        updateAiMessage(aiMessageIndex, {
+          content: data.message || '抱歉，服务出现异常，请稍后重试。'
+        })
       }
     })
   } catch (err) {
-    const lastMessage = messages.value[messages.value.length - 1]
+    const lastMessageIndex = messages.value.length - 1
+    const lastMessage = messages.value[lastMessageIndex]
     if (lastMessage?.role === 'ai' && !lastMessage.content) {
-      lastMessage.content = '抱歉，服务出现异常，请稍后重试。'
+      updateAiMessage(lastMessageIndex, {
+        content: '抱歉，服务出现异常，请稍后重试。'
+      })
     }
   } finally {
     asking.value = false

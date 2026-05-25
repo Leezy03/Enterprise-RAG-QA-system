@@ -58,50 +58,50 @@
 │  │  │  ├─vite.config.js
 │  │  │  ├─public
 │  │  │  └─src
-│  │  │     ├─api            # 接口请求封装
-│  │  │     ├─assets         # 静态资源
-│  │  │     ├─components     # 公共组件
-│  │  │     ├─router         # 路由配置
-│  │  │     ├─stores         # Pinia 状态管理
-│  │  │     ├─views          # 页面视图
+│  │  │     ├─api                      # 接口请求封装
+│  │  │     ├─assets                   # 静态资源
+│  │  │     ├─components               # 公共组件
+│  │  │     ├─router                   # 路由配置
+│  │  │     ├─stores                   # Pinia 状态管理
+│  │  │     ├─views                    # 页面视图
 │  │  │     ├─App.vue
 │  │  │     ├─main.js
 │  │  │     └─style.css
 │  │  └─server                # 后端项目
-│  │     ├─app.py             # Flask 启动入口
-│  │     ├─config.py          # 数据库、Ollama、Chroma 等配置
+│  │     ├─app.py                      # Flask 启动入口
+│  │     ├─config.py                   # 数据库、Ollama、Chroma 等配置
 │  │     ├─requirements.txt
-│  │     ├─chroma_data       # Chroma 向量库持久化数据（运行时生成）
-│  │     ├─models            # 数据库模型
+│  │     ├─chroma_data                 # Chroma 向量库持久化数据（运行时生成）
+│  │     ├─models                      # 数据库模型
 │  │     │  ├─chat_history.py
 │  │     │  ├─document.py
 │  │     │  ├─knowledge_base.py
 │  │     │  └─user.py
-│  │     ├─routes            # 后端接口路由
+│  │     ├─routes                      # 后端接口路由
 │  │     │  ├─auth.py
 │  │     │  ├─chat.py
 │  │     │  ├─document.py
 │  │     │  ├─knowledge_base.py
 │  │     │  ├─stats.py
 │  │     │  └─user.py
-│  │     ├─services          # RAG 与向量化服务
+│  │     ├─services                    # RAG 与向量化服务
 │  │     │  ├─rag_service.py
 │  │     │  ├─rerank_service.py
 │  │     │  └─vector_service.py
-│  │     ├─evaluation        # RAG 检索评测集与评测脚本
+│  │     ├─evaluation                  # RAG 检索评测集与评测脚本
 │  │     │  ├─rag_eval_set.json
 │  │     │  └─evaluate_rag.py
 │  │     ├─sql
 │  │     ├─static
 │  │     ├─templates
-│  │     ├─test_docs         # 测试文档
-│  │     ├─uploads           # 上传后的知识文档存储目录（运行时生成）
+│  │     ├─test_docs                   # 测试文档
+│  │     ├─uploads                        # 上传后的知识文档存储目录（运行时生成）
 │  │     └─utils
 │  │        ├─auth.py
 │  │        └─response.py
 │  └─数据库脚本
 │     └─db_enterprise_qa.sql  # MySQL 初始化脚本
-└─知识库文档                  # 示例知识文档
+└─知识库文档                   # 示例知识文档
    ├─产品使用指南
    ├─公司规章制度
    └─技术开发规范

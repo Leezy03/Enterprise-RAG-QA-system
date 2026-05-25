@@ -51,8 +51,20 @@
           </template>
         </el-table-column>
         <el-table-column prop="create_time" label="上传时间" width="170" />
-        <el-table-column label="操作" width="80" fixed="right">
+        <el-table-column label="操作" width="150" fixed="right">
           <template #default="{ row }">
+            <el-popconfirm title="确认重新向量化该文档？旧向量会被替换。" @confirm="handleRevectorize(row.id)">
+              <template #reference>
+                <el-button
+                  type="primary"
+                  link
+                  :loading="revectorizingId === row.id"
+                  :disabled="row.status === 'uploading'"
+                >
+                  重新向量化
+                </el-button>
+              </template>
+            </el-popconfirm>
             <el-popconfirm title="确认删除该文档？" @confirm="handleDelete(row.id)">
               <template #reference>
                 <el-button type="danger" link>删除</el-button>
@@ -119,7 +131,7 @@
 import { ref, reactive, onMounted } from 'vue'
 import { ElMessage } from 'element-plus'
 import { Upload } from '@element-plus/icons-vue'
-import { getDocList, uploadDoc, deleteDoc } from '../api/document'
+import { getDocList, uploadDoc, deleteDoc, revectorizeDoc } from '../api/document'
 import { getAllKB } from '../api/knowledge'
 
 const loading = ref(false)
@@ -131,6 +143,7 @@ const kbOptions = ref([])
 const uploadKbId = ref(null)
 const uploadRef = ref(null)
 const fileList = ref([])
+const revectorizingId = ref(null)
 
 /** 查询参数 */
 const queryParams = reactive({ page: 1, page_size: 10, kb_id: null })
@@ -197,6 +210,18 @@ async function handleDelete(id) {
   await deleteDoc(id)
   ElMessage.success('删除成功')
   loadList()
+}
+
+/** 重新向量化文档 */
+async function handleRevectorize(id) {
+  revectorizingId.value = id
+  try {
+    await revectorizeDoc(id)
+    ElMessage.success('重新向量化成功')
+    await loadList()
+  } finally {
+    revectorizingId.value = null
+  }
 }
 
 onMounted(() => {

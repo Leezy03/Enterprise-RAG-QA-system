@@ -49,21 +49,37 @@ const avatarStyle = computed(() => ({
   backgroundColor: isUser.value ? '#409eff' : '#67c23a'
 }))
 
-/** 来源标签：文件名 + 片段序号 + 可选相似度 */
+/** 来源标签：优先使用后端生成的source_label，兜底兼容旧数据 */
 function sourceLabel(src) {
+  if (src.source_label) return src.source_label
+  const fileName = src.file_name || '未知文档'
   const hasChunk = src.chunk_index !== null && src.chunk_index !== undefined
   const chunkIndex = Number(src.chunk_index)
-  const chunk = hasChunk && Number.isInteger(chunkIndex) ? ` #${chunkIndex + 1}` : ''
-  const sourceScore = typeof src.rerank_score === 'number' ? src.rerank_score : src.relevance_score
+  const chunk = hasChunk && Number.isInteger(chunkIndex) ? ` 第${chunkIndex + 1}段` : ''
+  const sourceScore = typeof src.score === 'number'
+    ? src.score
+    : (typeof src.rerank_score === 'number' ? src.rerank_score : src.relevance_score)
   const score = typeof sourceScore === 'number'
-    ? ` ${Math.round(sourceScore * 100)}%`
+    ? ` · 相关度${Math.round(sourceScore * 100)}%`
     : ''
-  return `${src.file_name}${chunk}${score}`
+  return `《${fileName}》${chunk}${score}`
 }
 
-/** 来源悬浮提示展示片段摘要 */
+/** 来源悬浮提示展示定位、检索信息和片段摘要 */
 function sourceTooltip(src) {
-  return src.content || src.file_name || '参考片段'
+  const lines = [sourceLabel(src)]
+  if (src.source_location) lines.push(`位置：${src.source_location}`)
+  if (src.retrieval_method) lines.push(`检索：${src.retrieval_method}`)
+  if (typeof src.bm25_score === 'number') {
+    lines.push(`BM25：${src.bm25_score.toFixed(4)}，命中词数：${src.bm25_matched_terms || 0}`)
+  }
+  if (src.bm25_matched_keywords) lines.push(`命中词：${src.bm25_matched_keywords}`)
+  if (src.chunk_strategy) {
+    lines.push(`切分：${src.chunk_strategy} ${src.chunk_size || '-'} / ${src.chunk_overlap || '-'}`)
+  }
+  const content = (src.content_preview || src.content || '').trim()
+  if (content) lines.push(`片段：${content}`)
+  return lines.join('\n')
 }
 </script>
 
@@ -119,5 +135,13 @@ function sourceTooltip(src) {
 .source-tag {
   margin-right: 4px;
   margin-bottom: 4px;
+  max-width: 100%;
+}
+
+.source-tag :deep(.el-tag__content) {
+  max-width: 420px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 </style>
