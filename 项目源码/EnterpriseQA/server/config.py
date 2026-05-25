@@ -58,8 +58,30 @@ class Config:
     ALLOWED_EXTENSIONS = {'txt', 'pdf', 'md', 'docx'}
 
     # 文档分块配置
-    CHUNK_SIZE = 500        # 每个分块的字符数
-    CHUNK_OVERLAP = 50      # 分块之间的重叠字符数
+    CHUNK_SIZE = int(os.environ.get('CHUNK_SIZE', 500))        # 默认每个分块的字符数
+    CHUNK_OVERLAP = int(os.environ.get('CHUNK_OVERLAP', 50))   # 默认分块之间的重叠字符数
+    CHUNK_STRATEGIES = {
+        'txt': {
+            'chunk_size': int(os.environ.get('TXT_CHUNK_SIZE', CHUNK_SIZE)),
+            'chunk_overlap': int(os.environ.get('TXT_CHUNK_OVERLAP', CHUNK_OVERLAP)),
+            'separators': ['\n\n', '\n', '。', '！', '？', '；', ';', '.', '!', '?', ' ', '']
+        },
+        'pdf': {
+            'chunk_size': int(os.environ.get('PDF_CHUNK_SIZE', 450)),
+            'chunk_overlap': int(os.environ.get('PDF_CHUNK_OVERLAP', 80)),
+            'separators': ['\n\n', '\n', '。', '！', '？', '；', ';', '.', '!', '?', ' ', '']
+        },
+        'md': {
+            'chunk_size': int(os.environ.get('MD_CHUNK_SIZE', 800)),
+            'chunk_overlap': int(os.environ.get('MD_CHUNK_OVERLAP', 100)),
+            'separators': ['\n\n', '\n', '。', '！', '？', '；', ';', '.', '!', '?', ' ', '']
+        },
+        'docx': {
+            'chunk_size': int(os.environ.get('DOCX_CHUNK_SIZE', 700)),
+            'chunk_overlap': int(os.environ.get('DOCX_CHUNK_OVERLAP', 100)),
+            'separators': ['\n\n', '\n', '。', '！', '？', '；', ';', '.', '!', '?', ' ', '']
+        }
+    }
 
     # 向量化批处理配置
     EMBED_BATCH_SIZE = 10   # 每批发送给Ollama的分块数量
@@ -69,4 +91,11 @@ class Config:
     RETRIEVER_TOP_K = int(os.environ.get('RETRIEVER_TOP_K', 4))     # 检索返回的相似文档数量
     RERANK_CANDIDATE_K = int(os.environ.get('RERANK_CANDIDATE_K', 12))  # 初始向量召回候选数
     RERANK_ENABLED = os.environ.get('RERANK_ENABLED', 'true').lower() == 'true'
+    HYBRID_SEARCH_ENABLED = os.environ.get('HYBRID_SEARCH_ENABLED', 'true').lower() == 'true'
+    HYBRID_KEYWORD_CANDIDATE_K = int(os.environ.get('HYBRID_KEYWORD_CANDIDATE_K', 12))
+    HYBRID_KEYWORD_SCAN_LIMIT = int(os.environ.get('HYBRID_KEYWORD_SCAN_LIMIT', 2000))
+    HYBRID_RRF_K = int(os.environ.get('HYBRID_RRF_K', 60))
+    BM25_K1 = float(os.environ.get('BM25_K1', 1.5))
+    BM25_B = float(os.environ.get('BM25_B', 0.75))
+    BM25_INCLUDE_METADATA = os.environ.get('BM25_INCLUDE_METADATA', 'true').lower() == 'true'
     RAG_HISTORY_TURNS = int(os.environ.get('RAG_HISTORY_TURNS', 3))  # 多轮问答使用的历史轮数

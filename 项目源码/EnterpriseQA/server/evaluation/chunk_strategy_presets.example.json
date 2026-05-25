@@ -1,0 +1,29 @@
+{
+  "strategies": [
+    {
+      "name": "current",
+      "description": "使用config.py/.env中的当前切分配置",
+      "chunk_strategies": null
+    },
+    {
+      "name": "small_chunks",
+      "description": "更小的chunk，偏向精准召回，embedding成本更高",
+      "chunk_strategies": {
+        "txt": { "chunk_size": 350, "chunk_overlap": 60 },
+        "pdf": { "chunk_size": 350, "chunk_overlap": 80 },
+        "md": { "chunk_size": 500, "chunk_overlap": 80 },
+        "docx": { "chunk_size": 500, "chunk_overlap": 80 }
+      }
+    },
+    {
+      "name": "large_chunks",
+      "description": "更大的chunk，偏向保留上下文，可能降低精准度",
+      "chunk_strategies": {
+        "txt": { "chunk_size": 800, "chunk_overlap": 100 },
+        "pdf": { "chunk_size": 700, "chunk_overlap": 120 },
+        "md": { "chunk_size": 1200, "chunk_overlap": 150 },
+        "docx": { "chunk_size": 1000, "chunk_overlap": 150 }
+      }
+    }
+  ]
+}

@@ -21,6 +21,37 @@ def allowed_file(filename):
            filename.rsplit('.', 1)[1].lower() in current_app.config['ALLOWED_EXTENSIONS']
 
 
+def refresh_kb_doc_count(kb_id):
+    """刷新知识库中已向量化文档数量"""
+    kb = KnowledgeBase.query.get(kb_id)
+    if kb:
+        kb.doc_count = Document.query.filter_by(kb_id=kb_id, status='vectorized').count()
+    return kb
+
+
+def vectorize_existing_document(doc):
+    """
+    对已存在的文档记录执行向量化。
+    该函数用于上传后首次向量化，也用于重新向量化。
+    """
+    from services.vector_service import VectorService
+
+    vector_service = VectorService()
+    chunk_count = vector_service.process_document(
+        doc.id,
+        doc.file_path,
+        doc.file_type,
+        doc.kb_id,
+        original_file_name=doc.file_name
+    )
+
+    doc.status = 'vectorized'
+    doc.chunk_count = chunk_count
+    refresh_kb_doc_count(doc.kb_id)
+    db.session.commit()
+    return chunk_count
+
+
 @doc_bp.route('/list', methods=['GET'])
 @login_required
 def get_list():
@@ -93,23 +124,8 @@ def upload():
 
     # 进行文档向量化处理
     try:
-        from services.vector_service import VectorService, OllamaServiceError
-        vector_service = VectorService()
-        chunk_count = vector_service.process_document(
-            doc.id,
-            file_path,
-            file_ext,
-            kb_id,
-            original_file_name=file.filename
-        )
-
-        # 更新文档状态
-        doc.status = 'vectorized'
-        doc.chunk_count = chunk_count
-
-        # 更新知识库文档计数
-        kb.doc_count = Document.query.filter_by(kb_id=kb_id, status='vectorized').count()
-        db.session.commit()
+        from services.vector_service import OllamaServiceError
+        vectorize_existing_document(doc)
     except OllamaServiceError as e:
         doc.status = 'failed'
         db.session.commit()
@@ -127,6 +143,58 @@ def upload():
         return error(f'文档向量化失败: {err_msg}')
 
     return success(doc.to_dict(), '上传成功')
+
+
+@doc_bp.route('/<int:doc_id>/revectorize', methods=['POST'])
+@admin_required
+def revectorize(doc_id):
+    """
+    重新向量化文档。
+    适用于调整chunk策略、source tracking、embedding模型后，对已有文件重新入库。
+    """
+    doc = Document.query.get(doc_id)
+    if not doc:
+        return error('文档不存在', 404)
+
+    kb = KnowledgeBase.query.get(doc.kb_id)
+    if not kb:
+        return error('知识库不存在', 404)
+
+    if not os.path.exists(doc.file_path):
+        doc.status = 'failed'
+        db.session.commit()
+        return error('原始文件不存在，无法重新向量化')
+
+    try:
+        from services.vector_service import VectorService, OllamaServiceError
+
+        doc.status = 'uploading'
+        db.session.commit()
+
+        vector_service = VectorService()
+        vector_service.delete_document(doc.id, doc.kb_id)
+        chunk_count = vectorize_existing_document(doc)
+
+        return success({
+            **doc.to_dict(),
+            'chunk_count': chunk_count
+        }, '重新向量化成功')
+    except OllamaServiceError as e:
+        doc.status = 'failed'
+        db.session.commit()
+        return error(str(e))
+    except ConnectionError:
+        doc.status = 'failed'
+        db.session.commit()
+        return error('无法连接Ollama服务，请确认Ollama已启动并可访问')
+    except Exception as e:
+        doc.status = 'failed'
+        refresh_kb_doc_count(doc.kb_id)
+        db.session.commit()
+        err_msg = str(e)
+        if 'status code' in err_msg:
+            return error(f'Ollama服务处理异常，请检查Ollama运行状态和系统资源: {err_msg}')
+        return error(f'重新向量化失败: {err_msg}')
 
 
 @doc_bp.route('/<int:doc_id>', methods=['DELETE'])
@@ -158,11 +226,7 @@ def delete(doc_id):
     db.session.delete(doc)
 
     # 更新知识库文档计数
-    kb = KnowledgeBase.query.get(kb_id)
-    if kb:
-        kb.doc_count = Document.query.filter_by(kb_id=kb_id, status='vectorized').count() - 1
-        if kb.doc_count < 0:
-            kb.doc_count = 0
+    refresh_kb_doc_count(kb_id)
 
     db.session.commit()
     return success(message='删除成功')
