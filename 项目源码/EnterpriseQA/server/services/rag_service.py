@@ -283,6 +283,7 @@ class RAGService:
                     'bm25_matched_terms': metadata.get('bm25_matched_terms'),
                     'bm25_matched_keywords': metadata.get('bm25_matched_keywords'),
                     'rerank_score': metadata.get('rerank_score'),
+                    'rerank_backend': metadata.get('rerank_backend'),
                     'rerank_enabled': metadata.get('rerank_enabled'),
                     'hybrid_score': metadata.get('hybrid_score'),
                     'hybrid_enabled': metadata.get('hybrid_enabled'),

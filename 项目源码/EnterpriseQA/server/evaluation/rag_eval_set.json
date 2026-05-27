@@ -3,196 +3,2593 @@
     "id": "policy_annual_leave_10_years",
     "kb_name": "公司规章制度",
     "question": "我累计工作11年，可以休几天年假？",
-    "expected_sources": ["员工请假管理办法.md"],
-    "expected_keywords": ["10天", "年假", "年休假"]
+    "expected_sources": [
+      "员工请假管理办法.md"
+    ],
+    "expected_keywords": [
+      "10天",
+      "年假",
+      "年休假"
+    ],
+    "type": "single_turn",
+    "category": "single_fact",
+    "eval_dimension": "retrieval",
+    "expected_answer_keywords": [
+      "10天",
+      "年假",
+      "年休假"
+    ]
   },
   {
     "id": "policy_leave_approval",
     "kb_name": "公司规章制度",
     "question": "请假需要提前申请并获得批准吗？",
-    "expected_sources": ["员工请假管理办法.md", "员工行为规范手册.docx"],
-    "expected_keywords": ["提前申请", "批准", "请假"]
+    "expected_sources": [
+      "员工请假管理办法.md",
+      "员工行为规范手册.docx"
+    ],
+    "expected_keywords": [
+      "提前申请",
+      "批准",
+      "请假"
+    ],
+    "type": "single_turn",
+    "category": "single_fact",
+    "eval_dimension": "retrieval",
+    "expected_answer_keywords": [
+      "提前申请",
+      "批准",
+      "请假"
+    ]
   },
   {
     "id": "policy_work_time",
     "kb_name": "公司规章制度",
     "question": "公司的上班时间和午休时间是什么？",
-    "expected_sources": ["公司考勤管理制度.txt"],
-    "expected_keywords": ["9:00", "18:00", "12:00", "13:00"]
+    "expected_sources": [
+      "公司考勤管理制度.txt"
+    ],
+    "expected_keywords": [
+      "9:00",
+      "18:00",
+      "12:00",
+      "13:00"
+    ],
+    "type": "single_turn",
+    "category": "single_fact",
+    "eval_dimension": "retrieval",
+    "expected_answer_keywords": [
+      "9:00",
+      "18:00",
+      "12:00",
+      "13:00"
+    ]
   },
   {
     "id": "policy_salary_promotion",
     "kb_name": "公司规章制度",
     "question": "员工晋升后薪酬会如何调整？",
-    "expected_sources": ["公司薪酬福利制度.pdf"],
-    "expected_keywords": ["晋升", "岗位等级", "薪酬"]
+    "expected_sources": [
+      "公司薪酬福利制度.pdf"
+    ],
+    "expected_keywords": [
+      "晋升",
+      "岗位等级",
+      "薪酬"
+    ],
+    "type": "single_turn",
+    "category": "single_fact",
+    "eval_dimension": "retrieval",
+    "expected_answer_keywords": [
+      "晋升",
+      "岗位等级",
+      "薪酬"
+    ]
   },
   {
     "id": "tech_db_engine",
     "kb_name": "技术文档库",
     "question": "公司数据库表应该使用什么存储引擎和字符集？",
-    "expected_sources": ["数据库设计规范.pdf"],
-    "expected_keywords": ["InnoDB", "utf8mb4", "字符集"]
+    "expected_sources": [
+      "数据库设计规范.pdf"
+    ],
+    "expected_keywords": [
+      "InnoDB",
+      "utf8mb4",
+      "字符集"
+    ],
+    "type": "single_turn",
+    "category": "single_fact",
+    "eval_dimension": "retrieval",
+    "expected_answer_keywords": [
+      "InnoDB",
+      "utf8mb4",
+      "字符集"
+    ]
   },
   {
     "id": "tech_db_integer",
     "kb_name": "技术文档库",
     "question": "开发数据库字段时，整数类型应该优先用什么？",
-    "expected_sources": ["数据库设计规范.pdf"],
-    "expected_keywords": ["INT", "BIGINT", "整数"]
+    "expected_sources": [
+      "数据库设计规范.pdf"
+    ],
+    "expected_keywords": [
+      "INT",
+      "BIGINT",
+      "整数"
+    ],
+    "type": "single_turn",
+    "category": "single_fact",
+    "eval_dimension": "retrieval",
+    "expected_answer_keywords": [
+      "INT",
+      "BIGINT",
+      "整数"
+    ]
   },
   {
     "id": "tech_api_doc",
     "kb_name": "技术文档库",
     "question": "API接口文档需要包含哪些内容？",
-    "expected_sources": ["API接口设计规范.md"],
-    "expected_keywords": ["接口描述", "请求方式", "URL", "请求参数", "响应参数"]
+    "expected_sources": [
+      "API接口设计规范.md"
+    ],
+    "expected_keywords": [
+      "接口描述",
+      "请求方式",
+      "URL",
+      "请求参数",
+      "响应参数"
+    ],
+    "type": "single_turn",
+    "category": "single_fact",
+    "eval_dimension": "retrieval",
+    "expected_answer_keywords": [
+      "接口描述",
+      "请求方式",
+      "URL",
+      "请求参数",
+      "响应参数"
+    ]
   },
   {
     "id": "tech_git_release",
     "kb_name": "技术文档库",
     "question": "版本发布时 release 分支应该从哪个分支创建？",
-    "expected_sources": ["Git版本管理规范.docx"],
-    "expected_keywords": ["develop", "release", "发布"]
+    "expected_sources": [
+      "Git版本管理规范.docx"
+    ],
+    "expected_keywords": [
+      "develop",
+      "release",
+      "发布"
+    ],
+    "type": "single_turn",
+    "category": "single_fact",
+    "eval_dimension": "retrieval",
+    "expected_answer_keywords": [
+      "develop",
+      "release",
+      "发布"
+    ]
   },
   {
     "id": "tech_python_password",
     "kb_name": "技术文档库",
     "question": "Python项目中密码和密钥可以硬编码在代码里吗？",
-    "expected_sources": ["Python开发编码规范.txt"],
-    "expected_keywords": ["禁止", "硬编码", "密码", "密钥"]
+    "expected_sources": [
+      "Python开发编码规范.txt"
+    ],
+    "expected_keywords": [
+      "禁止",
+      "硬编码",
+      "密码",
+      "密钥"
+    ],
+    "type": "single_turn",
+    "category": "single_fact",
+    "eval_dimension": "retrieval",
+    "expected_answer_keywords": [
+      "禁止",
+      "硬编码",
+      "密码",
+      "密钥"
+    ]
   },
   {
     "id": "product_oa_password",
     "kb_name": "产品帮助中心",
     "question": "企业OA系统的登录密码可以设置成6位吗？",
-    "expected_sources": ["企业OA系统使用手册.txt"],
-    "expected_keywords": ["不少于8位", "密码", "OA"]
+    "expected_sources": [
+      "企业OA系统使用手册.txt"
+    ],
+    "expected_keywords": [
+      "不少于8位",
+      "密码",
+      "OA"
+    ],
+    "type": "single_turn",
+    "category": "single_fact",
+    "eval_dimension": "retrieval",
+    "expected_answer_keywords": [
+      "不少于8位",
+      "密码",
+      "OA"
+    ]
   },
   {
     "id": "product_oa_meeting_room",
     "kb_name": "产品帮助中心",
     "question": "会议室使用前需要通过什么系统预约？",
-    "expected_sources": ["新员工入职指南.docx"],
-    "expected_keywords": ["OA系统", "会议室", "预约"]
+    "expected_sources": [
+      "新员工入职指南.docx"
+    ],
+    "expected_keywords": [
+      "OA系统",
+      "会议室",
+      "预约"
+    ],
+    "type": "single_turn",
+    "category": "single_fact",
+    "eval_dimension": "retrieval",
+    "expected_answer_keywords": [
+      "OA系统",
+      "会议室",
+      "预约"
+    ]
   },
   {
     "id": "product_email_smtp",
     "kb_name": "产品帮助中心",
     "question": "企业邮箱配置失败时，SMTP服务器身份验证需要注意什么？",
-    "expected_sources": ["企业邮箱配置说明.pdf"],
-    "expected_keywords": ["SMTP", "身份验证", "完整邮箱地址"]
+    "expected_sources": [
+      "企业邮箱配置说明.pdf"
+    ],
+    "expected_keywords": [
+      "SMTP",
+      "身份验证",
+      "完整邮箱地址"
+    ],
+    "type": "single_turn",
+    "category": "single_fact",
+    "eval_dimension": "retrieval",
+    "expected_answer_keywords": [
+      "SMTP",
+      "身份验证",
+      "完整邮箱地址"
+    ]
   },
   {
     "id": "product_email_capacity",
     "kb_name": "产品帮助中心",
     "question": "邮箱容量满了应该怎么处理？",
-    "expected_sources": ["企业邮箱配置说明.pdf"],
-    "expected_keywords": ["清理", "附件", "归档", "扩容"]
+    "expected_sources": [
+      "企业邮箱配置说明.pdf"
+    ],
+    "expected_keywords": [
+      "清理",
+      "附件",
+      "归档",
+      "扩容"
+    ],
+    "type": "single_turn",
+    "category": "single_fact",
+    "eval_dimension": "retrieval",
+    "expected_answer_keywords": [
+      "清理",
+      "附件",
+      "归档",
+      "扩容"
+    ]
   },
   {
     "id": "product_project_platform",
     "kb_name": "产品帮助中心",
     "question": "项目管理平台主要用于管理哪些内容？",
-    "expected_sources": ["项目管理平台操作指南.md"],
-    "expected_keywords": ["项目", "任务", "进度"]
+    "expected_sources": [
+      "项目管理平台操作指南.md"
+    ],
+    "expected_keywords": [
+      "项目",
+      "任务",
+      "进度"
+    ],
+    "type": "single_turn",
+    "category": "single_fact",
+    "eval_dimension": "retrieval",
+    "expected_answer_keywords": [
+      "项目",
+      "任务",
+      "进度"
+    ]
   },
   {
     "id": "product_new_employee_it",
     "kb_name": "产品帮助中心",
     "question": "新员工入职后IT部门会开通哪些系统账号？",
-    "expected_sources": ["新员工入职指南.docx"],
-    "expected_keywords": ["IT", "系统账号", "电脑登录账号"]
+    "expected_sources": [
+      "新员工入职指南.docx"
+    ],
+    "expected_keywords": [
+      "IT",
+      "系统账号",
+      "电脑登录账号"
+    ],
+    "type": "single_turn",
+    "category": "single_fact",
+    "eval_dimension": "retrieval",
+    "expected_answer_keywords": [
+      "IT",
+      "系统账号",
+      "电脑登录账号"
+    ]
   },
   {
     "id": "policy_absence_penalty",
     "kb_name": "公司规章制度",
     "question": "如果没请假就不到岗，会怎么处理？",
-    "expected_sources": ["公司考勤管理制度.txt", "员工请假管理办法.md"],
-    "expected_keywords": ["旷工", "扣除3天工资", "解除劳动合同"]
+    "expected_sources": [
+      "公司考勤管理制度.txt",
+      "员工请假管理办法.md"
+    ],
+    "expected_keywords": [
+      "旷工",
+      "扣除3天工资",
+      "解除劳动合同"
+    ],
+    "type": "single_turn",
+    "category": "single_fact",
+    "eval_dimension": "retrieval",
+    "expected_answer_keywords": [
+      "旷工",
+      "扣除3天工资",
+      "解除劳动合同"
+    ]
   },
   {
     "id": "policy_emergency_leave",
     "kb_name": "公司规章制度",
     "question": "紧急情况来不及请假，需要什么时候补办手续？",
-    "expected_sources": ["员工请假管理办法.md"],
-    "expected_keywords": ["电话", "直属主管", "1个工作日"]
+    "expected_sources": [
+      "员工请假管理办法.md"
+    ],
+    "expected_keywords": [
+      "电话",
+      "直属主管",
+      "1个工作日"
+    ],
+    "type": "single_turn",
+    "category": "single_fact",
+    "eval_dimension": "retrieval",
+    "expected_answer_keywords": [
+      "电话",
+      "直属主管",
+      "1个工作日"
+    ]
   },
   {
     "id": "policy_leave_over_5_days",
     "kb_name": "公司规章制度",
     "question": "请假超过5天需要谁审批？",
-    "expected_sources": ["员工请假管理办法.md"],
-    "expected_keywords": ["分管副总", "人力资源部", "部门负责人"]
+    "expected_sources": [
+      "员工请假管理办法.md"
+    ],
+    "expected_keywords": [
+      "分管副总",
+      "人力资源部",
+      "部门负责人"
+    ],
+    "type": "single_turn",
+    "category": "single_fact",
+    "eval_dimension": "retrieval",
+    "expected_answer_keywords": [
+      "分管副总",
+      "人力资源部",
+      "部门负责人"
+    ]
   },
   {
     "id": "policy_late_penalty",
     "kb_name": "公司规章制度",
     "question": "迟到超过1小时会怎么处理？",
-    "expected_sources": ["公司考勤管理制度.txt"],
-    "expected_keywords": ["迟到1小时以上", "旷工半天"]
+    "expected_sources": [
+      "公司考勤管理制度.txt"
+    ],
+    "expected_keywords": [
+      "迟到1小时以上",
+      "旷工半天"
+    ],
+    "type": "single_turn",
+    "category": "single_fact",
+    "eval_dimension": "retrieval",
+    "expected_answer_keywords": [
+      "迟到1小时以上",
+      "旷工半天"
+    ]
   },
   {
     "id": "tech_index_name",
     "kb_name": "技术文档库",
     "question": "联合索引命名格式是什么？",
-    "expected_sources": ["数据库设计规范.pdf"],
-    "expected_keywords": ["idx_表名_字段1_字段2", "联合索引"]
+    "expected_sources": [
+      "数据库设计规范.pdf"
+    ],
+    "expected_keywords": [
+      "idx_表名_字段1_字段2",
+      "联合索引"
+    ],
+    "type": "single_turn",
+    "category": "single_fact",
+    "eval_dimension": "retrieval",
+    "expected_answer_keywords": [
+      "idx_表名_字段1_字段2",
+      "联合索引"
+    ]
   },
   {
     "id": "tech_table_time_fields",
     "kb_name": "技术文档库",
     "question": "所有表必须包含哪些时间字段？",
-    "expected_sources": ["数据库设计规范.pdf"],
-    "expected_keywords": ["create_time", "update_time"]
+    "expected_sources": [
+      "数据库设计规范.pdf"
+    ],
+    "expected_keywords": [
+      "create_time",
+      "update_time"
+    ],
+    "type": "single_turn",
+    "category": "single_fact",
+    "eval_dimension": "retrieval",
+    "expected_answer_keywords": [
+      "create_time",
+      "update_time"
+    ]
   },
   {
     "id": "tech_api_deprecated_keep",
     "kb_name": "技术文档库",
     "question": "API废弃接口至少要保留多久？",
-    "expected_sources": ["API接口设计规范.md"],
-    "expected_keywords": ["废弃", "3个月"]
+    "expected_sources": [
+      "API接口设计规范.md"
+    ],
+    "expected_keywords": [
+      "废弃",
+      "3个月"
+    ],
+    "type": "single_turn",
+    "category": "single_fact",
+    "eval_dimension": "retrieval",
+    "expected_answer_keywords": [
+      "废弃",
+      "3个月"
+    ]
   },
   {
     "id": "tech_semver_parts",
     "kb_name": "技术文档库",
     "question": "语义化版本号由哪几部分组成？",
-    "expected_sources": ["Git版本管理规范.docx"],
-    "expected_keywords": ["主版本号", "次版本号", "修订号"]
+    "expected_sources": [
+      "Git版本管理规范.docx"
+    ],
+    "expected_keywords": [
+      "主版本号",
+      "次版本号",
+      "修订号"
+    ],
+    "type": "single_turn",
+    "category": "single_fact",
+    "eval_dimension": "retrieval",
+    "expected_answer_keywords": [
+      "主版本号",
+      "次版本号",
+      "修订号"
+    ]
   },
   {
     "id": "product_mail_attachment_limit",
     "kb_name": "产品帮助中心",
     "question": "单封邮件附件大小限制是多少？",
-    "expected_sources": ["企业邮箱配置说明.pdf"],
-    "expected_keywords": ["50MB", "附件"]
+    "expected_sources": [
+      "企业邮箱配置说明.pdf"
+    ],
+    "expected_keywords": [
+      "50MB",
+      "附件"
+    ],
+    "type": "single_turn",
+    "category": "single_fact",
+    "eval_dimension": "retrieval",
+    "expected_answer_keywords": [
+      "50MB",
+      "附件"
+    ]
   },
   {
     "id": "product_mail_capacity_warning",
     "kb_name": "产品帮助中心",
     "question": "邮箱容量超过多少会提醒？",
-    "expected_sources": ["企业邮箱配置说明.pdf"],
-    "expected_keywords": ["10GB", "80%", "提醒"]
+    "expected_sources": [
+      "企业邮箱配置说明.pdf"
+    ],
+    "expected_keywords": [
+      "10GB",
+      "80%",
+      "提醒"
+    ],
+    "type": "single_turn",
+    "category": "single_fact",
+    "eval_dimension": "retrieval",
+    "expected_answer_keywords": [
+      "10GB",
+      "80%",
+      "提醒"
+    ]
   },
   {
     "id": "product_oa_lock",
     "kb_name": "产品帮助中心",
     "question": "OA连续输错密码几次会锁定多久？",
-    "expected_sources": ["企业OA系统使用手册.txt"],
-    "expected_keywords": ["5次", "30分钟", "锁定"]
+    "expected_sources": [
+      "企业OA系统使用手册.txt"
+    ],
+    "expected_keywords": [
+      "5次",
+      "30分钟",
+      "锁定"
+    ],
+    "type": "single_turn",
+    "category": "single_fact",
+    "eval_dimension": "retrieval",
+    "expected_answer_keywords": [
+      "5次",
+      "30分钟",
+      "锁定"
+    ]
   },
   {
     "id": "product_task_priority",
     "kb_name": "产品帮助中心",
     "question": "项目任务有哪些优先级？",
-    "expected_sources": ["项目管理平台操作指南.md"],
-    "expected_keywords": ["紧急", "高", "中", "低"]
+    "expected_sources": [
+      "项目管理平台操作指南.md"
+    ],
+    "expected_keywords": [
+      "紧急",
+      "高",
+      "中",
+      "低"
+    ],
+    "type": "single_turn",
+    "category": "single_fact",
+    "eval_dimension": "retrieval",
+    "expected_answer_keywords": [
+      "紧急",
+      "高",
+      "中",
+      "低"
+    ]
   },
   {
     "id": "product_reedit_submitted_process",
     "kb_name": "产品帮助中心",
     "question": "已提交但还没审批完的流程怎么修改？",
-    "expected_sources": ["企业OA系统使用手册.txt"],
-    "expected_keywords": ["撤回", "重新编辑", "提交"]
+    "expected_sources": [
+      "企业OA系统使用手册.txt"
+    ],
+    "expected_keywords": [
+      "撤回",
+      "重新编辑",
+      "提交"
+    ],
+    "type": "single_turn",
+    "category": "single_fact",
+    "eval_dimension": "retrieval",
+    "expected_answer_keywords": [
+      "撤回",
+      "重新编辑",
+      "提交"
+    ]
+  },
+  {
+    "id": "policy_flexible_clock",
+    "kb_name": "公司规章制度",
+    "question": "公司弹性打卡允许提前或延后多久？",
+    "type": "single_turn",
+    "category": "single_fact",
+    "eval_dimension": "retrieval",
+    "expected_sources": [
+      "公司考勤管理制度.txt"
+    ],
+    "expected_keywords": [
+      "30分钟",
+      "弹性打卡",
+      "08:30-09:30"
+    ],
+    "expected_answer_keywords": [
+      "30分钟",
+      "弹性打卡",
+      "08:30-09:30"
+    ]
+  },
+  {
+    "id": "policy_core_work_time",
+    "kb_name": "公司规章制度",
+    "question": "考勤制度中的核心工作时间是什么？",
+    "type": "single_turn",
+    "category": "single_fact",
+    "eval_dimension": "retrieval",
+    "expected_sources": [
+      "公司考勤管理制度.txt"
+    ],
+    "expected_keywords": [
+      "核心工作时间",
+      "10:00-16:00"
+    ],
+    "expected_answer_keywords": [
+      "核心工作时间",
+      "10:00-16:00"
+    ]
+  },
+  {
+    "id": "policy_missing_clock_process",
+    "kb_name": "公司规章制度",
+    "question": "员工漏打卡后应该怎么补卡？",
+    "type": "single_turn",
+    "category": "single_fact",
+    "eval_dimension": "retrieval",
+    "expected_sources": [
+      "公司考勤管理制度.txt"
+    ],
+    "expected_keywords": [
+      "漏打卡",
+      "OA系统",
+      "24小时内"
+    ],
+    "expected_answer_keywords": [
+      "漏打卡",
+      "OA系统",
+      "24小时内"
+    ]
+  },
+  {
+    "id": "policy_missing_clock_limit",
+    "kb_name": "公司规章制度",
+    "question": "每个月最多允许几次漏打卡补卡？",
+    "type": "single_turn",
+    "category": "single_fact",
+    "eval_dimension": "retrieval",
+    "expected_sources": [
+      "公司考勤管理制度.txt"
+    ],
+    "expected_keywords": [
+      "每月",
+      "3次",
+      "漏打卡"
+    ],
+    "expected_answer_keywords": [
+      "每月",
+      "3次",
+      "漏打卡"
+    ]
+  },
+  {
+    "id": "policy_late_under_30",
+    "kb_name": "公司规章制度",
+    "question": "迟到30分钟以内会怎么处理？",
+    "type": "single_turn",
+    "category": "similar_distractor",
+    "eval_dimension": "retrieval",
+    "expected_sources": [
+      "公司考勤管理制度.txt"
+    ],
+    "expected_keywords": [
+      "迟到",
+      "30分钟以内",
+      "50元"
+    ],
+    "expected_answer_keywords": [
+      "迟到",
+      "30分钟以内",
+      "50元"
+    ]
+  },
+  {
+    "id": "policy_late_30_to_60",
+    "kb_name": "公司规章制度",
+    "question": "迟到30分钟到1小时之间会怎么处理？",
+    "type": "single_turn",
+    "category": "similar_distractor",
+    "eval_dimension": "retrieval",
+    "expected_sources": [
+      "公司考勤管理制度.txt"
+    ],
+    "expected_keywords": [
+      "迟到30分钟至1小时",
+      "100元"
+    ],
+    "expected_answer_keywords": [
+      "迟到30分钟至1小时",
+      "100元"
+    ]
+  },
+  {
+    "id": "policy_absence_one_day_salary",
+    "kb_name": "公司规章制度",
+    "question": "旷工一天扣多少工资？",
+    "type": "single_turn",
+    "category": "single_fact",
+    "eval_dimension": "retrieval",
+    "expected_sources": [
+      "公司考勤管理制度.txt"
+    ],
+    "expected_keywords": [
+      "旷工1天",
+      "扣除3天工资"
+    ],
+    "expected_answer_keywords": [
+      "旷工1天",
+      "扣除3天工资"
+    ]
+  },
+  {
+    "id": "policy_absence_termination_condition",
+    "kb_name": "公司规章制度",
+    "question": "连续旷工或累计旷工达到什么程度会解除劳动合同？",
+    "type": "single_turn",
+    "category": "similar_distractor",
+    "eval_dimension": "retrieval",
+    "expected_sources": [
+      "公司考勤管理制度.txt"
+    ],
+    "expected_keywords": [
+      "连续旷工3天",
+      "累计旷工5天",
+      "解除劳动合同"
+    ],
+    "expected_answer_keywords": [
+      "连续旷工3天",
+      "累计旷工5天",
+      "解除劳动合同"
+    ]
+  },
+  {
+    "id": "policy_overtime_workday_pay",
+    "kb_name": "公司规章制度",
+    "question": "工作日加班工资按什么比例计算？",
+    "type": "single_turn",
+    "category": "similar_distractor",
+    "eval_dimension": "retrieval",
+    "expected_sources": [
+      "公司薪酬福利制度.pdf"
+    ],
+    "expected_keywords": [
+      "工作日加班",
+      "150%"
+    ],
+    "expected_answer_keywords": [
+      "工作日加班",
+      "150%"
+    ]
+  },
+  {
+    "id": "policy_overtime_weekend_pay",
+    "kb_name": "公司规章制度",
+    "question": "周末加班工资按什么比例计算？",
+    "type": "single_turn",
+    "category": "similar_distractor",
+    "eval_dimension": "retrieval",
+    "expected_sources": [
+      "公司薪酬福利制度.pdf"
+    ],
+    "expected_keywords": [
+      "周末加班",
+      "200%"
+    ],
+    "expected_answer_keywords": [
+      "周末加班",
+      "200%"
+    ]
+  },
+  {
+    "id": "policy_overtime_holiday_pay",
+    "kb_name": "公司规章制度",
+    "question": "法定节假日加班工资按什么比例计算？",
+    "type": "single_turn",
+    "category": "similar_distractor",
+    "eval_dimension": "retrieval",
+    "expected_sources": [
+      "公司薪酬福利制度.pdf"
+    ],
+    "expected_keywords": [
+      "法定节假日",
+      "300%"
+    ],
+    "expected_answer_keywords": [
+      "法定节假日",
+      "300%"
+    ]
+  },
+  {
+    "id": "policy_annual_leave_under_10",
+    "kb_name": "公司规章制度",
+    "question": "工龄不满10年的员工年假有几天？",
+    "type": "single_turn",
+    "category": "single_fact",
+    "eval_dimension": "retrieval",
+    "expected_sources": [
+      "员工请假管理办法.md"
+    ],
+    "expected_keywords": [
+      "工作满1年不满10年",
+      "5天"
+    ],
+    "expected_answer_keywords": [
+      "工作满1年不满10年",
+      "5天"
+    ]
+  },
+  {
+    "id": "policy_annual_leave_over_20",
+    "kb_name": "公司规章制度",
+    "question": "工龄满20年的员工年假有几天？",
+    "type": "single_turn",
+    "category": "single_fact",
+    "eval_dimension": "retrieval",
+    "expected_sources": [
+      "员工请假管理办法.md"
+    ],
+    "expected_keywords": [
+      "已满20年",
+      "15天"
+    ],
+    "expected_answer_keywords": [
+      "已满20年",
+      "15天"
+    ]
+  },
+  {
+    "id": "policy_personal_leave_salary",
+    "kb_name": "公司规章制度",
+    "question": "事假期间工资如何计算？",
+    "type": "single_turn",
+    "category": "single_fact",
+    "eval_dimension": "retrieval",
+    "expected_sources": [
+      "员工请假管理办法.md"
+    ],
+    "expected_keywords": [
+      "事假期间",
+      "不发放工资"
+    ],
+    "expected_answer_keywords": [
+      "事假期间",
+      "不发放工资"
+    ]
+  },
+  {
+    "id": "policy_sick_leave_1_3_approval",
+    "kb_name": "公司规章制度",
+    "question": "请1到3天病假需要谁审批？",
+    "type": "single_turn",
+    "category": "similar_distractor",
+    "eval_dimension": "retrieval",
+    "expected_sources": [
+      "员工请假管理办法.md"
+    ],
+    "expected_keywords": [
+      "1-3天",
+      "部门经理审批"
+    ],
+    "expected_answer_keywords": [
+      "1-3天",
+      "部门经理审批"
+    ]
+  },
+  {
+    "id": "policy_sick_leave_over_3_approval",
+    "kb_name": "公司规章制度",
+    "question": "请3天以上病假需要哪些人审批？",
+    "type": "single_turn",
+    "category": "similar_distractor",
+    "eval_dimension": "retrieval",
+    "expected_sources": [
+      "员工请假管理办法.md"
+    ],
+    "expected_keywords": [
+      "3天以上",
+      "部门经理",
+      "人力资源部"
+    ],
+    "expected_answer_keywords": [
+      "3天以上",
+      "部门经理",
+      "人力资源部"
+    ]
+  },
+  {
+    "id": "policy_maternity_leave_days",
+    "kb_name": "公司规章制度",
+    "question": "女员工产假是多少天？",
+    "type": "single_turn",
+    "category": "single_fact",
+    "eval_dimension": "retrieval",
+    "expected_sources": [
+      "员工请假管理办法.md"
+    ],
+    "expected_keywords": [
+      "产假",
+      "98天"
+    ],
+    "expected_answer_keywords": [
+      "产假",
+      "98天"
+    ]
+  },
+  {
+    "id": "policy_leave_unapproved_absence_cross",
+    "kb_name": "公司规章制度",
+    "question": "请假未获批准但员工没来上班，会按什么处理？",
+    "type": "single_turn",
+    "category": "cross_document",
+    "eval_dimension": "retrieval",
+    "expected_sources": [
+      "员工请假管理办法.md",
+      "公司考勤管理制度.txt"
+    ],
+    "expected_keywords": [
+      "未经批准",
+      "未到岗",
+      "旷工"
+    ],
+    "expected_answer_keywords": [
+      "未经批准",
+      "未到岗",
+      "旷工"
+    ]
+  },
+  {
+    "id": "policy_full_attendance_bonus_cross",
+    "kb_name": "公司规章制度",
+    "question": "如果员工迟到或旷工，会影响当月全勤奖吗？",
+    "type": "single_turn",
+    "category": "cross_document",
+    "eval_dimension": "retrieval",
+    "expected_sources": [
+      "公司薪酬福利制度.pdf",
+      "公司考勤管理制度.txt"
+    ],
+    "expected_keywords": [
+      "全勤奖",
+      "无迟到",
+      "无旷工",
+      "200元"
+    ],
+    "expected_answer_keywords": [
+      "全勤奖",
+      "无迟到",
+      "无旷工",
+      "200元"
+    ]
+  },
+  {
+    "id": "policy_salary_components",
+    "kb_name": "公司规章制度",
+    "question": "员工月度工资由哪些部分组成？",
+    "type": "single_turn",
+    "category": "single_fact",
+    "eval_dimension": "retrieval",
+    "expected_sources": [
+      "公司薪酬福利制度.pdf"
+    ],
+    "expected_keywords": [
+      "基本工资",
+      "绩效工资",
+      "岗位津贴",
+      "加班费"
+    ],
+    "expected_answer_keywords": [
+      "基本工资",
+      "绩效工资",
+      "岗位津贴",
+      "加班费"
+    ]
+  },
+  {
+    "id": "policy_salary_pay_day",
+    "kb_name": "公司规章制度",
+    "question": "公司每月什么时候发放上月工资？",
+    "type": "single_turn",
+    "category": "single_fact",
+    "eval_dimension": "retrieval",
+    "expected_sources": [
+      "公司薪酬福利制度.pdf"
+    ],
+    "expected_keywords": [
+      "每月10日",
+      "上月工资"
+    ],
+    "expected_answer_keywords": [
+      "每月10日",
+      "上月工资"
+    ]
+  },
+  {
+    "id": "policy_confidentiality_obligation",
+    "kb_name": "公司规章制度",
+    "question": "员工对客户信息和商业秘密有什么保密要求？",
+    "type": "single_turn",
+    "category": "single_fact",
+    "eval_dimension": "retrieval",
+    "expected_sources": [
+      "员工行为规范手册.docx"
+    ],
+    "expected_keywords": [
+      "保密义务",
+      "客户信息",
+      "商业秘密"
+    ],
+    "expected_answer_keywords": [
+      "保密义务",
+      "客户信息",
+      "商业秘密"
+    ]
+  },
+  {
+    "id": "tech_db_name_rule",
+    "kb_name": "技术文档库",
+    "question": "数据库名应该采用什么命名规则？",
+    "type": "single_turn",
+    "category": "single_fact",
+    "eval_dimension": "retrieval",
+    "expected_sources": [
+      "数据库设计规范.pdf"
+    ],
+    "expected_keywords": [
+      "数据库命名",
+      "小写字母",
+      "下划线"
+    ],
+    "expected_answer_keywords": [
+      "数据库命名",
+      "小写字母",
+      "下划线"
+    ]
+  },
+  {
+    "id": "tech_table_name_rule",
+    "kb_name": "技术文档库",
+    "question": "数据表命名有什么要求？",
+    "type": "single_turn",
+    "category": "single_fact",
+    "eval_dimension": "retrieval",
+    "expected_sources": [
+      "数据库设计规范.pdf"
+    ],
+    "expected_keywords": [
+      "表名",
+      "小写字母",
+      "下划线",
+      "业务含义"
+    ],
+    "expected_answer_keywords": [
+      "表名",
+      "小写字母",
+      "下划线",
+      "业务含义"
+    ]
+  },
+  {
+    "id": "tech_primary_key_rule",
+    "kb_name": "技术文档库",
+    "question": "每张业务表的主键应该如何设计？",
+    "type": "single_turn",
+    "category": "single_fact",
+    "eval_dimension": "retrieval",
+    "expected_sources": [
+      "数据库设计规范.pdf"
+    ],
+    "expected_keywords": [
+      "主键",
+      "id",
+      "BIGINT",
+      "自增"
+    ],
+    "expected_answer_keywords": [
+      "主键",
+      "id",
+      "BIGINT",
+      "自增"
+    ]
+  },
+  {
+    "id": "tech_status_field_rule",
+    "kb_name": "技术文档库",
+    "question": "业务表的状态字段推荐怎么设计？",
+    "type": "single_turn",
+    "category": "single_fact",
+    "eval_dimension": "retrieval",
+    "expected_sources": [
+      "数据库设计规范.pdf"
+    ],
+    "expected_keywords": [
+      "status",
+      "TINYINT",
+      "默认值"
+    ],
+    "expected_answer_keywords": [
+      "status",
+      "TINYINT",
+      "默认值"
+    ]
+  },
+  {
+    "id": "tech_normal_index_name",
+    "kb_name": "技术文档库",
+    "question": "普通索引的命名规范是什么？",
+    "type": "single_turn",
+    "category": "similar_distractor",
+    "eval_dimension": "retrieval",
+    "expected_sources": [
+      "数据库设计规范.pdf"
+    ],
+    "expected_keywords": [
+      "普通索引",
+      "idx_表名_字段名"
+    ],
+    "expected_answer_keywords": [
+      "普通索引",
+      "idx_表名_字段名"
+    ]
+  },
+  {
+    "id": "tech_unique_index_name",
+    "kb_name": "技术文档库",
+    "question": "唯一索引的命名规范是什么？",
+    "type": "single_turn",
+    "category": "similar_distractor",
+    "eval_dimension": "retrieval",
+    "expected_sources": [
+      "数据库设计规范.pdf"
+    ],
+    "expected_keywords": [
+      "唯一索引",
+      "uk_表名_字段名"
+    ],
+    "expected_answer_keywords": [
+      "唯一索引",
+      "uk_表名_字段名"
+    ]
+  },
+  {
+    "id": "tech_decimal_money_rule",
+    "kb_name": "技术文档库",
+    "question": "金额字段为什么推荐使用DECIMAL而不是浮点类型？",
+    "type": "single_turn",
+    "category": "similar_distractor",
+    "eval_dimension": "retrieval",
+    "expected_sources": [
+      "数据库设计规范.pdf"
+    ],
+    "expected_keywords": [
+      "金额",
+      "DECIMAL",
+      "精度丢失"
+    ],
+    "expected_answer_keywords": [
+      "金额",
+      "DECIMAL",
+      "精度丢失"
+    ]
+  },
+  {
+    "id": "tech_time_type_rule",
+    "kb_name": "技术文档库",
+    "question": "创建时间和更新时间字段应该使用什么类型？",
+    "type": "single_turn",
+    "category": "similar_distractor",
+    "eval_dimension": "retrieval",
+    "expected_sources": [
+      "数据库设计规范.pdf"
+    ],
+    "expected_keywords": [
+      "created_at",
+      "updated_at",
+      "DATETIME"
+    ],
+    "expected_answer_keywords": [
+      "created_at",
+      "updated_at",
+      "DATETIME"
+    ]
+  },
+  {
+    "id": "tech_sql_parameterized",
+    "kb_name": "技术文档库",
+    "question": "API和数据库规范中如何避免SQL注入？",
+    "type": "single_turn",
+    "category": "cross_document",
+    "eval_dimension": "retrieval",
+    "expected_sources": [
+      "API接口设计规范.md",
+      "数据库设计规范.pdf"
+    ],
+    "expected_keywords": [
+      "参数化查询",
+      "SQL注入",
+      "禁止拼接"
+    ],
+    "expected_answer_keywords": [
+      "参数化查询",
+      "SQL注入",
+      "禁止拼接"
+    ]
+  },
+  {
+    "id": "tech_db_root_forbidden",
+    "kb_name": "技术文档库",
+    "question": "数据库连接为什么禁止使用root账户？",
+    "type": "single_turn",
+    "category": "single_fact",
+    "eval_dimension": "retrieval",
+    "expected_sources": [
+      "数据库设计规范.pdf"
+    ],
+    "expected_keywords": [
+      "禁止使用root账户",
+      "最小权限原则"
+    ],
+    "expected_answer_keywords": [
+      "禁止使用root账户",
+      "最小权限原则"
+    ]
+  },
+  {
+    "id": "tech_api_https_version",
+    "kb_name": "技术文档库",
+    "question": "API接口路径需要满足哪些版本和协议要求？",
+    "type": "single_turn",
+    "category": "single_fact",
+    "eval_dimension": "retrieval",
+    "expected_sources": [
+      "API接口设计规范.md"
+    ],
+    "expected_keywords": [
+      "HTTPS",
+      "/api/v1",
+      "版本号"
+    ],
+    "expected_answer_keywords": [
+      "HTTPS",
+      "/api/v1",
+      "版本号"
+    ]
+  },
+  {
+    "id": "tech_api_required_headers",
+    "kb_name": "技术文档库",
+    "question": "API请求头必须包含哪些字段？",
+    "type": "single_turn",
+    "category": "single_fact",
+    "eval_dimension": "retrieval",
+    "expected_sources": [
+      "API接口设计规范.md"
+    ],
+    "expected_keywords": [
+      "Content-Type",
+      "Authorization",
+      "X-Request-ID"
+    ],
+    "expected_answer_keywords": [
+      "Content-Type",
+      "Authorization",
+      "X-Request-ID"
+    ]
+  },
+  {
+    "id": "tech_api_response_structure",
+    "kb_name": "技术文档库",
+    "question": "统一API响应结构包含哪些字段？",
+    "type": "single_turn",
+    "category": "single_fact",
+    "eval_dimension": "retrieval",
+    "expected_sources": [
+      "API接口设计规范.md"
+    ],
+    "expected_keywords": [
+      "code",
+      "message",
+      "data",
+      "timestamp"
+    ],
+    "expected_answer_keywords": [
+      "code",
+      "message",
+      "data",
+      "timestamp"
+    ]
+  },
+  {
+    "id": "tech_api_status_401_403",
+    "kb_name": "技术文档库",
+    "question": "401和403错误分别表示什么？",
+    "type": "single_turn",
+    "category": "similar_distractor",
+    "eval_dimension": "retrieval",
+    "expected_sources": [
+      "API接口设计规范.md"
+    ],
+    "expected_keywords": [
+      "401",
+      "未授权",
+      "403",
+      "禁止访问"
+    ],
+    "expected_answer_keywords": [
+      "401",
+      "未授权",
+      "403",
+      "禁止访问"
+    ]
+  },
+  {
+    "id": "tech_api_token_expiration",
+    "kb_name": "技术文档库",
+    "question": "访问令牌和刷新令牌分别多久过期？",
+    "type": "single_turn",
+    "category": "single_fact",
+    "eval_dimension": "retrieval",
+    "expected_sources": [
+      "API接口设计规范.md"
+    ],
+    "expected_keywords": [
+      "访问令牌",
+      "2小时",
+      "刷新令牌",
+      "7天"
+    ],
+    "expected_answer_keywords": [
+      "访问令牌",
+      "2小时",
+      "刷新令牌",
+      "7天"
+    ]
+  },
+  {
+    "id": "tech_api_rate_limit_login",
+    "kb_name": "技术文档库",
+    "question": "登录接口的限流规则是什么？",
+    "type": "single_turn",
+    "category": "similar_distractor",
+    "eval_dimension": "retrieval",
+    "expected_sources": [
+      "API接口设计规范.md"
+    ],
+    "expected_keywords": [
+      "登录接口",
+      "5次/分钟"
+    ],
+    "expected_answer_keywords": [
+      "登录接口",
+      "5次/分钟"
+    ]
+  },
+  {
+    "id": "tech_api_rate_limit_upload",
+    "kb_name": "技术文档库",
+    "question": "文件上传接口的限流规则是什么？",
+    "type": "single_turn",
+    "category": "similar_distractor",
+    "eval_dimension": "retrieval",
+    "expected_sources": [
+      "API接口设计规范.md"
+    ],
+    "expected_keywords": [
+      "文件上传接口",
+      "10次/分钟"
+    ],
+    "expected_answer_keywords": [
+      "文件上传接口",
+      "10次/分钟"
+    ]
+  },
+  {
+    "id": "tech_python_module_name",
+    "kb_name": "技术文档库",
+    "question": "Python模块和包命名应该遵循什么风格？",
+    "type": "single_turn",
+    "category": "single_fact",
+    "eval_dimension": "retrieval",
+    "expected_sources": [
+      "Python开发编码规范.txt"
+    ],
+    "expected_keywords": [
+      "模块名",
+      "包名",
+      "小写字母",
+      "下划线"
+    ],
+    "expected_answer_keywords": [
+      "模块名",
+      "包名",
+      "小写字母",
+      "下划线"
+    ]
+  },
+  {
+    "id": "tech_python_line_length",
+    "kb_name": "技术文档库",
+    "question": "Python代码每行长度建议限制是多少？",
+    "type": "single_turn",
+    "category": "single_fact",
+    "eval_dimension": "retrieval",
+    "expected_sources": [
+      "Python开发编码规范.txt"
+    ],
+    "expected_keywords": [
+      "行长度",
+      "88字符"
+    ],
+    "expected_answer_keywords": [
+      "行长度",
+      "88字符"
+    ]
+  },
+  {
+    "id": "tech_git_main_branch",
+    "kb_name": "技术文档库",
+    "question": "main分支的用途是什么？",
+    "type": "single_turn",
+    "category": "single_fact",
+    "eval_dimension": "retrieval",
+    "expected_sources": [
+      "Git版本管理规范.docx"
+    ],
+    "expected_keywords": [
+      "main分支",
+      "生产环境",
+      "稳定代码"
+    ],
+    "expected_answer_keywords": [
+      "main分支",
+      "生产环境",
+      "稳定代码"
+    ]
+  },
+  {
+    "id": "tech_git_feature_branch",
+    "kb_name": "技术文档库",
+    "question": "功能分支应该如何命名？",
+    "type": "single_turn",
+    "category": "similar_distractor",
+    "eval_dimension": "retrieval",
+    "expected_sources": [
+      "Git版本管理规范.docx"
+    ],
+    "expected_keywords": [
+      "feature/功能名称",
+      "功能分支"
+    ],
+    "expected_answer_keywords": [
+      "feature/功能名称",
+      "功能分支"
+    ]
+  },
+  {
+    "id": "tech_sensitive_info_cross",
+    "kb_name": "技术文档库",
+    "question": "代码和Git规范中对密码、密钥这类敏感信息有什么要求？",
+    "type": "single_turn",
+    "category": "cross_document",
+    "eval_dimension": "retrieval",
+    "expected_sources": [
+      "Python开发编码规范.txt",
+      "Git版本管理规范.docx"
+    ],
+    "expected_keywords": [
+      "敏感信息",
+      "密码",
+      "API密钥",
+      "提交"
+    ],
+    "expected_answer_keywords": [
+      "敏感信息",
+      "密码",
+      "API密钥",
+      "提交"
+    ]
+  },
+  {
+    "id": "product_oa_url",
+    "kb_name": "产品帮助中心",
+    "question": "企业OA系统的访问地址是什么？",
+    "type": "single_turn",
+    "category": "single_fact",
+    "eval_dimension": "retrieval",
+    "expected_sources": [
+      "企业OA系统使用手册.txt"
+    ],
+    "expected_keywords": [
+      "oa.company.com"
+    ],
+    "expected_answer_keywords": [
+      "oa.company.com"
+    ]
+  },
+  {
+    "id": "product_oa_first_login_account",
+    "kb_name": "产品帮助中心",
+    "question": "新员工首次登录OA系统时账号和初始密码是什么？",
+    "type": "single_turn",
+    "category": "cross_document",
+    "eval_dimension": "retrieval",
+    "expected_sources": [
+      "企业OA系统使用手册.txt",
+      "新员工入职指南.docx"
+    ],
+    "expected_keywords": [
+      "员工工号",
+      "身份证后6位",
+      "首次登录"
+    ],
+    "expected_answer_keywords": [
+      "员工工号",
+      "身份证后6位",
+      "首次登录"
+    ]
+  },
+  {
+    "id": "product_oa_password_expire",
+    "kb_name": "产品帮助中心",
+    "question": "OA密码有效期是多久？",
+    "type": "single_turn",
+    "category": "single_fact",
+    "eval_dimension": "retrieval",
+    "expected_sources": [
+      "企业OA系统使用手册.txt"
+    ],
+    "expected_keywords": [
+      "密码有效期",
+      "90天"
+    ],
+    "expected_answer_keywords": [
+      "密码有效期",
+      "90天"
+    ]
+  },
+  {
+    "id": "product_oa_launch_process",
+    "kb_name": "产品帮助中心",
+    "question": "在OA里如何发起流程申请？",
+    "type": "single_turn",
+    "category": "single_fact",
+    "eval_dimension": "retrieval",
+    "expected_sources": [
+      "企业OA系统使用手册.txt"
+    ],
+    "expected_keywords": [
+      "流程管理",
+      "发起流程",
+      "选择流程类型"
+    ],
+    "expected_answer_keywords": [
+      "流程管理",
+      "发起流程",
+      "选择流程类型"
+    ]
+  },
+  {
+    "id": "product_oa_common_process_types",
+    "kb_name": "产品帮助中心",
+    "question": "OA系统常用流程包括哪些？",
+    "type": "single_turn",
+    "category": "single_fact",
+    "eval_dimension": "retrieval",
+    "expected_sources": [
+      "企业OA系统使用手册.txt"
+    ],
+    "expected_keywords": [
+      "请假申请",
+      "报销申请",
+      "采购申请",
+      "用章申请"
+    ],
+    "expected_answer_keywords": [
+      "请假申请",
+      "报销申请",
+      "采购申请",
+      "用章申请"
+    ]
+  },
+  {
+    "id": "product_oa_document_upload_limit",
+    "kb_name": "产品帮助中心",
+    "question": "OA文档上传支持哪些格式，单个文件最大多大？",
+    "type": "single_turn",
+    "category": "similar_distractor",
+    "eval_dimension": "retrieval",
+    "expected_sources": [
+      "企业OA系统使用手册.txt"
+    ],
+    "expected_keywords": [
+      "PDF",
+      "Word",
+      "Excel",
+      "50MB"
+    ],
+    "expected_answer_keywords": [
+      "PDF",
+      "Word",
+      "Excel",
+      "50MB"
+    ]
+  },
+  {
+    "id": "product_email_format",
+    "kb_name": "产品帮助中心",
+    "question": "企业邮箱账号格式是什么？",
+    "type": "single_turn",
+    "category": "single_fact",
+    "eval_dimension": "retrieval",
+    "expected_sources": [
+      "企业邮箱配置说明.pdf"
+    ],
+    "expected_keywords": [
+      "邮箱账号格式",
+      "姓名拼音@company.com"
+    ],
+    "expected_answer_keywords": [
+      "邮箱账号格式",
+      "姓名拼音@company.com"
+    ]
+  },
+  {
+    "id": "product_email_web_login",
+    "kb_name": "产品帮助中心",
+    "question": "企业邮箱Web端登录地址是什么？",
+    "type": "single_turn",
+    "category": "single_fact",
+    "eval_dimension": "retrieval",
+    "expected_sources": [
+      "企业邮箱配置说明.pdf"
+    ],
+    "expected_keywords": [
+      "mail.company.com"
+    ],
+    "expected_answer_keywords": [
+      "mail.company.com"
+    ]
+  },
+  {
+    "id": "product_email_imap_config",
+    "kb_name": "产品帮助中心",
+    "question": "企业邮箱IMAP服务器和端口如何配置？",
+    "type": "single_turn",
+    "category": "similar_distractor",
+    "eval_dimension": "retrieval",
+    "expected_sources": [
+      "企业邮箱配置说明.pdf"
+    ],
+    "expected_keywords": [
+      "IMAP",
+      "imap.company.com",
+      "993",
+      "SSL"
+    ],
+    "expected_answer_keywords": [
+      "IMAP",
+      "imap.company.com",
+      "993",
+      "SSL"
+    ]
+  },
+  {
+    "id": "product_email_smtp_config",
+    "kb_name": "产品帮助中心",
+    "question": "企业邮箱SMTP服务器和端口如何配置？",
+    "type": "single_turn",
+    "category": "similar_distractor",
+    "eval_dimension": "retrieval",
+    "expected_sources": [
+      "企业邮箱配置说明.pdf"
+    ],
+    "expected_keywords": [
+      "SMTP",
+      "smtp.company.com",
+      "587",
+      "STARTTLS"
+    ],
+    "expected_answer_keywords": [
+      "SMTP",
+      "smtp.company.com",
+      "587",
+      "STARTTLS"
+    ]
+  },
+  {
+    "id": "product_email_change_password",
+    "kb_name": "产品帮助中心",
+    "question": "企业邮箱密码应该在哪里修改？",
+    "type": "single_turn",
+    "category": "single_fact",
+    "eval_dimension": "retrieval",
+    "expected_sources": [
+      "企业邮箱配置说明.pdf"
+    ],
+    "expected_keywords": [
+      "邮箱设置",
+      "账户安全",
+      "修改密码"
+    ],
+    "expected_answer_keywords": [
+      "邮箱设置",
+      "账户安全",
+      "修改密码"
+    ]
+  },
+  {
+    "id": "product_onboarding_materials",
+    "kb_name": "产品帮助中心",
+    "question": "新员工入职当天需要提交哪些材料？",
+    "type": "single_turn",
+    "category": "single_fact",
+    "eval_dimension": "retrieval",
+    "expected_sources": [
+      "新员工入职指南.docx"
+    ],
+    "expected_keywords": [
+      "身份证复印件",
+      "学历证书",
+      "银行卡复印件",
+      "体检报告"
+    ],
+    "expected_answer_keywords": [
+      "身份证复印件",
+      "学历证书",
+      "银行卡复印件",
+      "体检报告"
+    ]
+  },
+  {
+    "id": "product_onboarding_contract_confidentiality",
+    "kb_name": "产品帮助中心",
+    "question": "新员工入职当天需要签署哪些协议？",
+    "type": "single_turn",
+    "category": "cross_document",
+    "eval_dimension": "retrieval",
+    "expected_sources": [
+      "新员工入职指南.docx",
+      "员工行为规范手册.docx"
+    ],
+    "expected_keywords": [
+      "劳动合同",
+      "保密协议",
+      "员工手册确认书"
+    ],
+    "expected_answer_keywords": [
+      "劳动合同",
+      "保密协议",
+      "员工手册确认书"
+    ]
+  },
+  {
+    "id": "product_canteen_time",
+    "kb_name": "产品帮助中心",
+    "question": "公司午餐和晚餐分别在什么时间供应？",
+    "type": "single_turn",
+    "category": "single_fact",
+    "eval_dimension": "retrieval",
+    "expected_sources": [
+      "新员工入职指南.docx"
+    ],
+    "expected_keywords": [
+      "午餐",
+      "11:30-13:30",
+      "晚餐",
+      "17:30-19:30"
+    ],
+    "expected_answer_keywords": [
+      "午餐",
+      "11:30-13:30",
+      "晚餐",
+      "17:30-19:30"
+    ]
+  },
+  {
+    "id": "product_probation_two_months",
+    "kb_name": "产品帮助中心",
+    "question": "试用期2个月适用于哪类合同期限？",
+    "type": "single_turn",
+    "category": "similar_distractor",
+    "eval_dimension": "retrieval",
+    "expected_sources": [
+      "新员工入职指南.docx"
+    ],
+    "expected_keywords": [
+      "试用期2个月",
+      "1年以上不满3年"
+    ],
+    "expected_answer_keywords": [
+      "试用期2个月",
+      "1年以上不满3年"
+    ]
+  },
+  {
+    "id": "product_probation_three_months",
+    "kb_name": "产品帮助中心",
+    "question": "试用期3个月适用于哪类合同期限？",
+    "type": "single_turn",
+    "category": "similar_distractor",
+    "eval_dimension": "retrieval",
+    "expected_sources": [
+      "新员工入职指南.docx"
+    ],
+    "expected_keywords": [
+      "试用期3个月",
+      "3年以上"
+    ],
+    "expected_answer_keywords": [
+      "试用期3个月",
+      "3年以上"
+    ]
+  },
+  {
+    "id": "product_pm_url",
+    "kb_name": "产品帮助中心",
+    "question": "项目管理平台的访问地址是什么？",
+    "type": "single_turn",
+    "category": "single_fact",
+    "eval_dimension": "retrieval",
+    "expected_sources": [
+      "项目管理平台操作指南.md"
+    ],
+    "expected_keywords": [
+      "pm.company.com"
+    ],
+    "expected_answer_keywords": [
+      "pm.company.com"
+    ]
+  },
+  {
+    "id": "product_pm_project_number_format",
+    "kb_name": "产品帮助中心",
+    "question": "项目编号格式是什么样的？",
+    "type": "single_turn",
+    "category": "single_fact",
+    "eval_dimension": "retrieval",
+    "expected_sources": [
+      "项目管理平台操作指南.md"
+    ],
+    "expected_keywords": [
+      "PRJ-YYYY-NNN",
+      "项目编号"
+    ],
+    "expected_answer_keywords": [
+      "PRJ-YYYY-NNN",
+      "项目编号"
+    ]
+  },
+  {
+    "id": "product_pm_task_types",
+    "kb_name": "产品帮助中心",
+    "question": "项目管理平台支持哪些任务类型？",
+    "type": "single_turn",
+    "category": "single_fact",
+    "eval_dimension": "retrieval",
+    "expected_sources": [
+      "项目管理平台操作指南.md"
+    ],
+    "expected_keywords": [
+      "开发任务",
+      "测试任务",
+      "设计任务",
+      "文档任务",
+      "会议任务"
+    ],
+    "expected_answer_keywords": [
+      "开发任务",
+      "测试任务",
+      "设计任务",
+      "文档任务",
+      "会议任务"
+    ]
+  },
+  {
+    "id": "product_pm_task_flow",
+    "kb_name": "产品帮助中心",
+    "question": "项目任务状态流转顺序是什么？",
+    "type": "single_turn",
+    "category": "single_fact",
+    "eval_dimension": "retrieval",
+    "expected_sources": [
+      "项目管理平台操作指南.md"
+    ],
+    "expected_keywords": [
+      "待开始",
+      "进行中",
+      "待测试",
+      "已完成"
+    ],
+    "expected_answer_keywords": [
+      "待开始",
+      "进行中",
+      "待测试",
+      "已完成"
+    ]
+  },
+  {
+    "id": "product_pm_doc_types",
+    "kb_name": "产品帮助中心",
+    "question": "项目管理平台支持上传哪些文档类型？",
+    "type": "single_turn",
+    "category": "single_fact",
+    "eval_dimension": "retrieval",
+    "expected_sources": [
+      "项目管理平台操作指南.md"
+    ],
+    "expected_keywords": [
+      "需求文档",
+      "设计文档",
+      "测试用例",
+      "会议纪要"
+    ],
+    "expected_answer_keywords": [
+      "需求文档",
+      "设计文档",
+      "测试用例",
+      "会议纪要"
+    ]
+  },
+  {
+    "id": "product_pm_export_report",
+    "kb_name": "产品帮助中心",
+    "question": "项目管理平台可以导出哪些项目报告？",
+    "type": "single_turn",
+    "category": "single_fact",
+    "eval_dimension": "retrieval",
+    "expected_sources": [
+      "项目管理平台操作指南.md"
+    ],
+    "expected_keywords": [
+      "项目进度报告",
+      "工时统计报表",
+      "任务完成情况",
+      "团队绩效报告"
+    ],
+    "expected_answer_keywords": [
+      "项目进度报告",
+      "工时统计报表",
+      "任务完成情况",
+      "团队绩效报告"
+    ]
+  },
+  {
+    "id": "syn_policy_late_gt1_a",
+    "kb_name": "公司规章制度",
+    "question": "迟到超过一个小时算什么？",
+    "type": "synonym",
+    "category": "synonym_paraphrase",
+    "eval_dimension": "robustness",
+    "expected_sources": [
+      "公司考勤管理制度.txt"
+    ],
+    "expected_keywords": [
+      "迟到超过1小时",
+      "旷工半天"
+    ],
+    "expected_answer_keywords": [
+      "迟到超过1小时",
+      "旷工半天"
+    ],
+    "paired_with": "syn_policy_late_gt1_b"
+  },
+  {
+    "id": "syn_policy_late_gt1_b",
+    "kb_name": "公司规章制度",
+    "question": "晚到60分钟以上会被如何认定？",
+    "type": "synonym",
+    "category": "synonym_paraphrase",
+    "eval_dimension": "robustness",
+    "expected_sources": [
+      "公司考勤管理制度.txt"
+    ],
+    "expected_keywords": [
+      "迟到超过1小时",
+      "旷工半天"
+    ],
+    "expected_answer_keywords": [
+      "迟到超过1小时",
+      "旷工半天"
+    ],
+    "paired_with": "syn_policy_late_gt1_a"
+  },
+  {
+    "id": "syn_policy_leave_5_a",
+    "kb_name": "公司规章制度",
+    "question": "请五天事假要谁批？",
+    "type": "synonym",
+    "category": "synonym_paraphrase",
+    "eval_dimension": "robustness",
+    "expected_sources": [
+      "员工请假管理办法.md"
+    ],
+    "expected_keywords": [
+      "3天以上",
+      "部门经理",
+      "人力资源部"
+    ],
+    "expected_answer_keywords": [
+      "3天以上",
+      "部门经理",
+      "人力资源部"
+    ],
+    "paired_with": "syn_policy_leave_5_b"
+  },
+  {
+    "id": "syn_policy_leave_5_b",
+    "kb_name": "公司规章制度",
+    "question": "事假超过三天的审批链路是什么？",
+    "type": "synonym",
+    "category": "synonym_paraphrase",
+    "eval_dimension": "robustness",
+    "expected_sources": [
+      "员工请假管理办法.md"
+    ],
+    "expected_keywords": [
+      "3天以上",
+      "部门经理",
+      "人力资源部"
+    ],
+    "expected_answer_keywords": [
+      "3天以上",
+      "部门经理",
+      "人力资源部"
+    ],
+    "paired_with": "syn_policy_leave_5_a"
+  },
+  {
+    "id": "syn_tech_api_deprecated_a",
+    "kb_name": "技术文档库",
+    "question": "接口废弃后多久下线？",
+    "type": "synonym",
+    "category": "synonym_paraphrase",
+    "eval_dimension": "robustness",
+    "expected_sources": [
+      "API接口设计规范.md"
+    ],
+    "expected_keywords": [
+      "接口废弃",
+      "至少提前30天",
+      "废弃通知"
+    ],
+    "expected_answer_keywords": [
+      "接口废弃",
+      "至少提前30天",
+      "废弃通知"
+    ],
+    "paired_with": "syn_tech_api_deprecated_b"
+  },
+  {
+    "id": "syn_tech_api_deprecated_b",
+    "kb_name": "技术文档库",
+    "question": "老API停止服务前需要提前多长时间通知？",
+    "type": "synonym",
+    "category": "synonym_paraphrase",
+    "eval_dimension": "robustness",
+    "expected_sources": [
+      "API接口设计规范.md"
+    ],
+    "expected_keywords": [
+      "接口废弃",
+      "至少提前30天",
+      "废弃通知"
+    ],
+    "expected_answer_keywords": [
+      "接口废弃",
+      "至少提前30天",
+      "废弃通知"
+    ],
+    "paired_with": "syn_tech_api_deprecated_a"
+  },
+  {
+    "id": "syn_tech_select_star_a",
+    "kb_name": "技术文档库",
+    "question": "SQL查询能不能直接select *？",
+    "type": "synonym",
+    "category": "synonym_paraphrase",
+    "eval_dimension": "robustness",
+    "expected_sources": [
+      "数据库设计规范.pdf"
+    ],
+    "expected_keywords": [
+      "避免SELECT *",
+      "明确字段名"
+    ],
+    "expected_answer_keywords": [
+      "避免SELECT *",
+      "明确字段名"
+    ],
+    "paired_with": "syn_tech_select_star_b"
+  },
+  {
+    "id": "syn_tech_select_star_b",
+    "kb_name": "技术文档库",
+    "question": "数据库查询是否允许使用星号返回所有列？",
+    "type": "synonym",
+    "category": "synonym_paraphrase",
+    "eval_dimension": "robustness",
+    "expected_sources": [
+      "数据库设计规范.pdf"
+    ],
+    "expected_keywords": [
+      "避免SELECT *",
+      "明确字段名"
+    ],
+    "expected_answer_keywords": [
+      "避免SELECT *",
+      "明确字段名"
+    ],
+    "paired_with": "syn_tech_select_star_a"
+  },
+  {
+    "id": "syn_product_oa_lock_a",
+    "kb_name": "产品帮助中心",
+    "question": "OA账号输错密码几次会被锁？",
+    "type": "synonym",
+    "category": "synonym_paraphrase",
+    "eval_dimension": "robustness",
+    "expected_sources": [
+      "企业OA系统使用手册.txt"
+    ],
+    "expected_keywords": [
+      "连续5次",
+      "账户锁定",
+      "30分钟"
+    ],
+    "expected_answer_keywords": [
+      "连续5次",
+      "账户锁定",
+      "30分钟"
+    ],
+    "paired_with": "syn_product_oa_lock_b"
+  },
+  {
+    "id": "syn_product_oa_lock_b",
+    "kb_name": "产品帮助中心",
+    "question": "OA登录失败达到多少次会临时锁定账号？",
+    "type": "synonym",
+    "category": "synonym_paraphrase",
+    "eval_dimension": "robustness",
+    "expected_sources": [
+      "企业OA系统使用手册.txt"
+    ],
+    "expected_keywords": [
+      "连续5次",
+      "账户锁定",
+      "30分钟"
+    ],
+    "expected_answer_keywords": [
+      "连续5次",
+      "账户锁定",
+      "30分钟"
+    ],
+    "paired_with": "syn_product_oa_lock_a"
+  },
+  {
+    "id": "follow_policy_annual_11",
+    "kb_name": "公司规章制度",
+    "question": "那11年呢？",
+    "type": "follow_up",
+    "category": "multi_turn_followup",
+    "eval_dimension": "multi_turn",
+    "expected_sources": [
+      "员工请假管理办法.md"
+    ],
+    "expected_keywords": [
+      "工作满10年不满20年",
+      "10天"
+    ],
+    "expected_answer_keywords": [
+      "工作满10年不满20年",
+      "10天"
+    ],
+    "conversation_history": [
+      {
+        "role": "user",
+        "content": "工龄不满10年的员工年假有几天？"
+      },
+      {
+        "role": "assistant",
+        "content": "工作满1年不满10年的员工年休假为5天。"
+      }
+    ],
+    "expected_retrieval_query": "工龄11年的员工年假有几天？",
+    "rewritten_question_keywords": [
+      "工龄",
+      "11年",
+      "年假"
+    ]
+  },
+  {
+    "id": "follow_policy_sick_pay_6",
+    "kb_name": "公司规章制度",
+    "question": "如果是6天呢？",
+    "type": "follow_up",
+    "category": "multi_turn_followup",
+    "eval_dimension": "multi_turn",
+    "expected_sources": [
+      "员工请假管理办法.md"
+    ],
+    "expected_keywords": [
+      "病假4-15天",
+      "70%"
+    ],
+    "expected_answer_keywords": [
+      "病假4-15天",
+      "70%"
+    ],
+    "conversation_history": [
+      {
+        "role": "user",
+        "content": "病假3天以内工资怎么发？"
+      },
+      {
+        "role": "assistant",
+        "content": "病假1-3天期间发放基本工资的80%。"
+      }
+    ],
+    "expected_retrieval_query": "病假6天期间工资怎么发？",
+    "rewritten_question_keywords": [
+      "病假",
+      "6天",
+      "工资"
+    ]
+  },
+  {
+    "id": "follow_policy_overtime_weekend",
+    "kb_name": "公司规章制度",
+    "question": "周末呢？",
+    "type": "follow_up",
+    "category": "multi_turn_followup",
+    "eval_dimension": "multi_turn",
+    "expected_sources": [
+      "公司薪酬福利制度.pdf"
+    ],
+    "expected_keywords": [
+      "周末加班",
+      "200%"
+    ],
+    "expected_answer_keywords": [
+      "周末加班",
+      "200%"
+    ],
+    "conversation_history": [
+      {
+        "role": "user",
+        "content": "工作日加班按多少比例算？"
+      },
+      {
+        "role": "assistant",
+        "content": "工作日加班工资按150%计算。"
+      }
+    ],
+    "expected_retrieval_query": "周末加班工资按什么比例计算？",
+    "rewritten_question_keywords": [
+      "周末加班",
+      "工资",
+      "比例"
+    ]
+  },
+  {
+    "id": "follow_tech_api_token",
+    "kb_name": "技术文档库",
+    "question": "刷新令牌呢？",
+    "type": "follow_up",
+    "category": "multi_turn_followup",
+    "eval_dimension": "multi_turn",
+    "expected_sources": [
+      "API接口设计规范.md"
+    ],
+    "expected_keywords": [
+      "刷新令牌",
+      "7天"
+    ],
+    "expected_answer_keywords": [
+      "刷新令牌",
+      "7天"
+    ],
+    "conversation_history": [
+      {
+        "role": "user",
+        "content": "访问令牌多久过期？"
+      },
+      {
+        "role": "assistant",
+        "content": "访问令牌有效期为2小时。"
+      }
+    ],
+    "expected_retrieval_query": "刷新令牌多久过期？",
+    "rewritten_question_keywords": [
+      "刷新令牌",
+      "过期"
+    ]
+  },
+  {
+    "id": "follow_tech_git_release",
+    "kb_name": "技术文档库",
+    "question": "发布分支呢？",
+    "type": "follow_up",
+    "category": "multi_turn_followup",
+    "eval_dimension": "multi_turn",
+    "expected_sources": [
+      "Git版本管理规范.docx"
+    ],
+    "expected_keywords": [
+      "release/版本号",
+      "发布分支"
+    ],
+    "expected_answer_keywords": [
+      "release/版本号",
+      "发布分支"
+    ],
+    "conversation_history": [
+      {
+        "role": "user",
+        "content": "功能分支怎么命名？"
+      },
+      {
+        "role": "assistant",
+        "content": "功能分支命名为feature/功能名称。"
+      }
+    ],
+    "expected_retrieval_query": "发布分支应该如何命名？",
+    "rewritten_question_keywords": [
+      "发布分支",
+      "命名"
+    ]
+  },
+  {
+    "id": "follow_tech_db_index",
+    "kb_name": "技术文档库",
+    "question": "唯一索引呢？",
+    "type": "follow_up",
+    "category": "multi_turn_followup",
+    "eval_dimension": "multi_turn",
+    "expected_sources": [
+      "数据库设计规范.pdf"
+    ],
+    "expected_keywords": [
+      "唯一索引",
+      "uk_表名_字段名"
+    ],
+    "expected_answer_keywords": [
+      "唯一索引",
+      "uk_表名_字段名"
+    ],
+    "conversation_history": [
+      {
+        "role": "user",
+        "content": "普通索引怎么命名？"
+      },
+      {
+        "role": "assistant",
+        "content": "普通索引命名格式为idx_表名_字段名。"
+      }
+    ],
+    "expected_retrieval_query": "唯一索引的命名规范是什么？",
+    "rewritten_question_keywords": [
+      "唯一索引",
+      "命名规范"
+    ]
+  },
+  {
+    "id": "follow_product_email_smtp",
+    "kb_name": "产品帮助中心",
+    "question": "发信服务器呢？",
+    "type": "follow_up",
+    "category": "multi_turn_followup",
+    "eval_dimension": "multi_turn",
+    "expected_sources": [
+      "企业邮箱配置说明.pdf"
+    ],
+    "expected_keywords": [
+      "SMTP",
+      "smtp.company.com",
+      "587"
+    ],
+    "expected_answer_keywords": [
+      "SMTP",
+      "smtp.company.com",
+      "587"
+    ],
+    "conversation_history": [
+      {
+        "role": "user",
+        "content": "企业邮箱收信服务器怎么配置？"
+      },
+      {
+        "role": "assistant",
+        "content": "IMAP服务器为imap.company.com，端口993。"
+      }
+    ],
+    "expected_retrieval_query": "企业邮箱SMTP发信服务器如何配置？",
+    "rewritten_question_keywords": [
+      "SMTP",
+      "发信服务器",
+      "配置"
+    ]
+  },
+  {
+    "id": "follow_product_pm_task_flow",
+    "kb_name": "产品帮助中心",
+    "question": "任务状态怎么流转？",
+    "type": "follow_up",
+    "category": "multi_turn_followup",
+    "eval_dimension": "multi_turn",
+    "expected_sources": [
+      "项目管理平台操作指南.md"
+    ],
+    "expected_keywords": [
+      "待开始",
+      "进行中",
+      "待测试",
+      "已完成"
+    ],
+    "expected_answer_keywords": [
+      "待开始",
+      "进行中",
+      "待测试",
+      "已完成"
+    ],
+    "conversation_history": [
+      {
+        "role": "user",
+        "content": "项目管理平台有哪些任务类型？"
+      },
+      {
+        "role": "assistant",
+        "content": "支持开发、测试、设计、文档和会议任务。"
+      }
+    ],
+    "expected_retrieval_query": "项目管理平台任务状态如何流转？",
+    "rewritten_question_keywords": [
+      "任务状态",
+      "流转"
+    ]
+  },
+  {
+    "id": "no_policy_pet_insurance",
+    "kb_name": "公司规章制度",
+    "question": "公司是否提供宠物医疗保险？",
+    "type": "no_answer",
+    "category": "no_answer_refusal",
+    "eval_dimension": "robustness",
+    "expected_sources": [],
+    "expected_keywords": [],
+    "expected_answer_keywords": [],
+    "expected_answerable": false,
+    "expected_refusal": true,
+    "negative_keywords": [
+      "宠物医疗保险"
+    ]
+  },
+  {
+    "id": "no_policy_remote_work",
+    "kb_name": "公司规章制度",
+    "question": "公司远程办公每周最多可以申请几天？",
+    "type": "no_answer",
+    "category": "no_answer_refusal",
+    "eval_dimension": "robustness",
+    "expected_sources": [],
+    "expected_keywords": [],
+    "expected_answer_keywords": [],
+    "expected_answerable": false,
+    "expected_refusal": true,
+    "negative_keywords": [
+      "远程办公",
+      "每周"
+    ]
+  },
+  {
+    "id": "no_policy_stock_option",
+    "kb_name": "公司规章制度",
+    "question": "员工期权归属周期是几年？",
+    "type": "no_answer",
+    "category": "no_answer_refusal",
+    "eval_dimension": "robustness",
+    "expected_sources": [],
+    "expected_keywords": [],
+    "expected_answer_keywords": [],
+    "expected_answerable": false,
+    "expected_refusal": true,
+    "negative_keywords": [
+      "期权",
+      "归属周期"
+    ]
+  },
+  {
+    "id": "no_tech_k8s_deploy",
+    "kb_name": "技术文档库",
+    "question": "Kubernetes生产发布的灰度策略是什么？",
+    "type": "no_answer",
+    "category": "no_answer_refusal",
+    "eval_dimension": "robustness",
+    "expected_sources": [],
+    "expected_keywords": [],
+    "expected_answer_keywords": [],
+    "expected_answerable": false,
+    "expected_refusal": true,
+    "negative_keywords": [
+      "Kubernetes",
+      "灰度策略"
+    ]
+  },
+  {
+    "id": "no_tech_java_style",
+    "kb_name": "技术文档库",
+    "question": "Java代码的包名规范是什么？",
+    "type": "no_answer",
+    "category": "no_answer_refusal",
+    "eval_dimension": "robustness",
+    "expected_sources": [],
+    "expected_keywords": [],
+    "expected_answer_keywords": [],
+    "expected_answerable": false,
+    "expected_refusal": true,
+    "negative_keywords": [
+      "Java",
+      "包名规范"
+    ]
+  },
+  {
+    "id": "no_product_vpn_setup",
+    "kb_name": "产品帮助中心",
+    "question": "公司VPN客户端如何配置？",
+    "type": "no_answer",
+    "category": "no_answer_refusal",
+    "eval_dimension": "robustness",
+    "expected_sources": [],
+    "expected_keywords": [],
+    "expected_answer_keywords": [],
+    "expected_answerable": false,
+    "expected_refusal": true,
+    "negative_keywords": [
+      "VPN",
+      "客户端配置"
+    ]
+  },
+  {
+    "id": "no_product_crm_password",
+    "kb_name": "产品帮助中心",
+    "question": "CRM系统密码忘记后如何重置？",
+    "type": "no_answer",
+    "category": "no_answer_refusal",
+    "eval_dimension": "robustness",
+    "expected_sources": [],
+    "expected_keywords": [],
+    "expected_answer_keywords": [],
+    "expected_answerable": false,
+    "expected_refusal": true,
+    "negative_keywords": [
+      "CRM",
+      "密码重置"
+    ]
+  },
+  {
+    "id": "no_product_travel_booking",
+    "kb_name": "产品帮助中心",
+    "question": "差旅机票应该在哪个系统预订？",
+    "type": "no_answer",
+    "category": "no_answer_refusal",
+    "eval_dimension": "robustness",
+    "expected_sources": [],
+    "expected_keywords": [],
+    "expected_answer_keywords": [],
+    "expected_answerable": false,
+    "expected_refusal": true,
+    "negative_keywords": [
+      "差旅",
+      "机票预订"
+    ]
   }
 ]
